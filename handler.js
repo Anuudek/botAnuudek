@@ -968,7 +968,7 @@ let chatgptUser = global.chatgpt.data.users[m.sender];
 		if (!('antiInstagram' in chat)) chat.antiInstagram = false
 		if (!('antiTwitter' in chat)) chat.antiInstagram = false
 		if (!('antifake' in chat)) chat.antifake = false
-		if (!('reaction' in chat)) chat.reaction = false    
+		if (!('reaction' in chat)) chat.reaction = true    
                 if (!('viewonce' in chat)) chat.viewonce = true         
                 if (!('modoadmin' in chat)) chat.modoadmin = false           
                 if (!('antitoxic' in chat)) chat.antitoxic = true 
@@ -1001,7 +1001,7 @@ let chatgptUser = global.chatgpt.data.users[m.sender];
 		    antiInstagram: false,
 		    antiTwitter: false,
 		    antifake: false,
-		    reaction: false,
+		    reaction: true,
                     viewonce: true,
                     modoadmin: false,
                     antitoxic: true,
@@ -1401,7 +1401,12 @@ user.commandCount = 1;
         if (opts['autoread']) await this.readMessages([m.key])
 	if (settingsREAD.autoread2) await this.readMessages([m.key])  
 	//if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])
-		
+
+	if (!db.data.chats[m.chat].reaction && m.isGroup) throw 0
+        if (!m.fromMem && m.text.match(/(ata|des|able|izo|ido|.-.|._.|:)|:(|:v|v:|o.o|;v|v;|v':|:'v)/gi)) {
+        let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "🐦"])
+        this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
+        function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
     }
 }
 
