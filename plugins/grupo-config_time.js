@@ -1,7 +1,7 @@
 /* Creditos a https://github.com/ALBERTO9883/NyanCatBot-MD */
 
 let handler = async (m, { conn, isAdmin, isOwner, args, usedPrefix, command }) => {
-let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
+//let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
 try{
 if (!(isAdmin || isOwner)) {
 global.dfail('admin', m, conn)
@@ -119,8 +119,8 @@ await conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()} ${lenguajeGB['smsMalused
 ${lenguajeGB['smsGrupoTime1']()}
 *${usedPrefix + command} ${lenguajeGB.lenguaje() == 'en' ? 'open' : 'abrir'} 1*
 ${lenguajeGB['smsGrupoTime2']()}
-*${usedPrefix + command} ${lenguajeGB.lenguaje() == 'en' ? 'close' : 'cerrar'} 1*`, fkontak, m)
-//await conn.sendMessage(m.chat, caption, {quoted: fkontak})
+*${usedPrefix + command} ${lenguajeGB.lenguaje() == 'en' ? 'close' : 'cerrar'} 1*`, m)
+//await conn.sendMessage(m.chat, caption, {quoted: m})
 throw false
 }
 let timeoutset = 86400000 * args[1] / 24 //Una Hora 86400000
