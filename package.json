@@ -29,10 +29,10 @@
     
 "repository": {
 "type": "git",
- "url": "git+https://github.com/Anuudek/botanuudek.git" },
+ "url": "git+https://github.com/Anuudek/botAnuudek.git" },
  
 "bugs": {
-"url": "https://github.com/Anuudek/botanuudek/issues" },
+"url": "https://github.com/Anuudek/botAnuudek/issues" },
 "license": "GPL-3.0-or-later",
 "dependencies": {
 "@adiwajshing/keyed-db": "^0.2.4",
@@ -41,7 +41,7 @@
 "@green-code/music-track-data": "^2.0.3",
 "@shineiichijo/marika": "^2.0.6",
 "@vitalets/google-translate-api": "^8.0.0",
-"@whiskeysockets/baileys": "^6.4.1",
+"@whiskeysockets/baileys": "npm:@whiskeysockets/baileys",
 "@xct007/frieren-scraper": "^0.0.2",
 "acrcloud": "^1.4.0",
 "api-dylux": "^1.5.6",
