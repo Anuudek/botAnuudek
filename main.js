@@ -392,10 +392,10 @@ setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return;
 const a = await clearTmp();
 console.log(chalk.bold.cyanBright(lenguajeGB.smsClearTmp()))}, 1000 * 60 * 4)
-setInterval(async () => {
+/*setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return;
 await purgeSession();
-console.log(chalk.bold.cyanBright(lenguajeGB.smspurgeSession()))}, 1000 * 60 * 30)
+console.log(chalk.bold.cyanBright(lenguajeGB.smspurgeSession()))}, 1000 * 60 * 30)*/
 setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return;
 await purgeSessionSB();
