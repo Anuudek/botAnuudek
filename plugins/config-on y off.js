@@ -586,7 +586,7 @@ ${m.isGroup ? `` : `${lenguajeGB.smsConfi9()}`}
 
 ┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 
-${wm}`, m.chat, { mentions: [aa,] })
+${wm}`, m, { mentions: [aa,] })
 //conn.sendMessage(m.chat, { text: texto }, { quoted: m })
 //conn.sendMessage(m.chat, texto, {quoted: m})	
 throw false
