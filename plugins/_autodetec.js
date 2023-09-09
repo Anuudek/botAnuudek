@@ -1,4 +1,4 @@
-/*let WAMessageStubType = (await import(global.baileys)).default
+let WAMessageStubType = (await import(global.baileys)).default
 export async function before(m, { conn, participants}) {
 if (!m.messageStubType || !m.isGroup) return
 let usuario = `@${m.sender.split`@`[0]}`
@@ -26,4 +26,4 @@ await this.sendMessage(m.chat, { text: `${usuario} *desativou* as mensagens temp
 console.log({messageStubType: m.messageStubType,
 messageStubParameters: m.messageStubParameters,
 type: WAMessageStubType[m.messageStubType], 
-})}}*/
+})}}
