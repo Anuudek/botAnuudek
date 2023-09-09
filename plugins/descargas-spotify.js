@@ -3,7 +3,7 @@ import Spotify from "spotifydl-x"
 import fs from 'fs'
 let handler = async(m, { conn, usedPrefix, command, text }) => {
 let frep = { contextInfo: { externalAdReply: {title: wm, body: author, sourceUrl: redesMenu.getRandom(), thumbnail: await(await fetch(gataMenu.getRandom())).buffer() }}}
-if (!text) return await conn.reply(m.chat, `${lenguajeGB.smsMalused2()} ⊱ *${usedPrefix + command} Bellyache*`, m)
+if (!text) return await conn.reply(m.chat, `${lenguajeGB.smsMalused2()} -> _${usedPrefix + command} a tua mesa cura_`, m)
 try {
 let resDL = await fetch(`https://api.lolhuman.xyz/api/spotifysearch?apikey=${lolkeysapi}&query=${text}`)
 let jsonDL = await resDL.json()
