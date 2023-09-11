@@ -45,11 +45,42 @@ let handler = async (m, { conn, args, usedPrefix }) => {
       user.attempts = 6;
 
       // Inicie o jogo enviando a primeira mensagem
-      await conn.reply(m.chat, `Iniciando o jogo da forca na categoria '${category}'!`, m);
       await sendGameState(conn, m.chat, user.displayWord, user.attempts, user.incorrectGuesses);
     } else {
       // O usuário já está em um jogo, implemente a lógica de jogo aqui
-      // ...
+      if (m.text.length === 1 && m.text.match(/[a-z]/i)) {
+        let guess = m.text.toLowerCase();
+
+        if (user.word.includes(guess) && !user.displayWord.includes(guess)) {
+          // Adivinhou uma letra correta
+          for (let i = 0; i < user.word.length; i++) {
+            if (user.word[i] === guess) {
+              user.displayWord[i] = guess;
+            }
+          }
+
+          if (!user.displayWord.includes('_')) {
+            await conn.reply(m.chat, `Parabéns, você adivinhou a palavra: '${user.word}'!`, m);
+            endGame(m.sender);
+          } else {
+            await sendGameState(conn, m.chat, user.displayWord, user.attempts, user.incorrectGuesses);
+          }
+        } else if (!user.incorrectGuesses.includes(guess)) {
+          // Adivinhou uma letra incorreta
+          user.incorrectGuesses.push(guess);
+          user.attempts--;
+
+          if (user.attempts === 0) {
+            await conn.reply(m.chat, `Você perdeu! A palavra era: '${user.word}'.`, m);
+            endGame(m.sender);
+          } else {
+            await sendGameState(conn, m.chat, user.displayWord, user.attempts, user.incorrectGuesses);
+          }
+        }
+      } else if (m.text.toLowerCase() === 'desistir') {
+        await conn.reply(m.chat, `Você desistiu! A palavra era: '${user.word}'.`, m);
+        endGame(m.sender);
+      }
     }
   } catch (e) {
     console.error(e);
@@ -96,4 +127,9 @@ async function sendGameState(conn, chatId, displayWord, attempts, incorrectGuess
   gameState += `Tentativas restantes: ${attempts}\n`;
   gameState += `Tentativas incorretas: ${incorrectGuesses.join(', ')}\n`;
   await conn.reply(chatId, gameState, null, { quoted: null });
+}
+
+function endGame(userId) {
+  // Encerre o jogo e redefina os dados do usuário
+  delete sessions[userId];
 }
