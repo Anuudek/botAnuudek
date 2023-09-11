@@ -22,7 +22,7 @@ const handler = async (m, {conn, text, args, usedPrefix, command}) => {
 if (!args[0]) throw `${lenguajeGB['smsAvisoMG']()}insira algum link do twitter para baixar o seu conteúdo. por exemplo:\n_${usedPrefix + command} https://twitter.com/Animalesybichos/status/1564616107159330816?t=gKqUsstvflSp7Dhpe_nmDg&s=19_`
  try {
    const resFG = await twitter(text);
-   const { key } = await conn.sendMessage(m.chat, {text: wait}, {quoted: m});
+   var { key } = await conn.sendMessage(m.chat, {text: wait}, {quoted: m});
 await delay(1000 * 1);
 await conn.sendMessage(m.chat, {text: waitt, edit: key});
 await delay(1000 * 1);
