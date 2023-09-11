@@ -1,4 +1,3 @@
-let MessageType = (await import(global.baileys)).default
 let hangman_word
 let hangman
 
