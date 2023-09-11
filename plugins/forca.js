@@ -1,135 +1,74 @@
-let sessions = {};
+// Importe quaisquer módulos ou bibliotecas necessárias
 
-let handler = async (m, { conn, args, usedPrefix }) => {
-  let user = sessions[m.sender];
+let hangmanGames = {}
 
-  if (!user) {
-    user = {
-      inGame: false,
-      category: '',
-      word: '',
-      displayWord: [],
-      attempts: 6,
-      incorrectGuesses: [],
-    };
-    sessions[m.sender] = user;
+function randomWord() {
+  // Coloque aqui uma lógica para gerar uma palavra aleatória para o jogo da forca
+  // Por exemplo, você pode ter uma lista de palavras predefinidas e selecionar uma delas aleatoriamente
+  const words = ["programação", "computador", "javascript", "desenvolvimento", "openai"]
+  return words[Math.floor(Math.random() * words.length)]
+}
+
+function displayWord(word, guessedLetters) {
+  // Crie uma função para exibir a palavra oculta com letras adivinhadas
+  return word.replace(/\w/g, letter => (guessedLetters.includes(letter) ? letter : "_"))
+}
+
+function startGame(chatId) {
+  const wordToGuess = randomWord()
+  hangmanGames[chatId] = {
+    wordToGuess,
+    guessedLetters: [],
+    attempts: 6, // Número de tentativas permitidas
   }
+  return `Começou um novo jogo da forca! Adivinhe a palavra:\n${displayWord(wordToGuess, [])}`
+}
 
-  if (new Date() - user.lastmining < 10000) {
-    return await conn.reply(m.chat, `Espere um tempinho para usar o comando novamente...`, m);
-  }
-
-  try {
-    if (!user.inGame) {
-      if (args.length < 1) {
-        return conn.reply(m.chat, `Uso incorreto! Use ${usedPrefix}forca categoria`, m);
-      }
-
-      let category = args[0].toLowerCase(); // Categoria do jogo
-
-      if (category !== 'categoria1' && category !== 'categoria2') {
-        return conn.reply(m.chat, `Categoria inválida! Use 'categoria1' ou 'categoria2'.`, m);
-      }
-
-      let wordList = getCategoryWords(category); // Obtenha a lista de palavras para a categoria
-
-      if (!wordList || wordList.length === 0) {
-        return conn.reply(m.chat, `Nenhuma palavra encontrada para a categoria '${category}'.`, m);
-      }
-
-      user.inGame = true;
-      user.category = category;
-      user.word = getRandomWord(wordList); // Obtenha uma palavra aleatória da lista
-      user.displayWord = createDisplayWord(user.word); // Crie a representação inicial da palavra a ser adivinhada
-      user.incorrectGuesses = [];
-      user.attempts = 6;
-
-      // Inicie o jogo enviando a primeira mensagem
-      await sendGameState(conn, m.chat, user.displayWord, user.attempts, user.incorrectGuesses);
-    } else {
-      // O usuário já está em um jogo, implemente a lógica de jogo aqui
-      if (m.text.length === 1 && m.text.match(/[a-z]/i)) {
-        let guess = m.text.toLowerCase();
-
-        if (user.word.includes(guess) && !user.displayWord.includes(guess)) {
-          // Adivinhou uma letra correta
-          for (let i = 0; i < user.word.length; i++) {
-            if (user.word[i] === guess) {
-              user.displayWord[i] = guess;
-            }
-          }
-
-          if (!user.displayWord.includes('_')) {
-            await conn.reply(m.chat, `Parabéns, você adivinhou a palavra: '${user.word}'!`, m);
-            endGame(m.sender);
-          } else {
-            await sendGameState(conn, m.chat, user.displayWord, user.attempts, user.incorrectGuesses);
-          }
-        } else if (!user.incorrectGuesses.includes(guess)) {
-          // Adivinhou uma letra incorreta
-          user.incorrectGuesses.push(guess);
-          user.attempts--;
-
-          if (user.attempts === 0) {
-            await conn.reply(m.chat, `Você perdeu! A palavra era: '${user.word}'.`, m);
-            endGame(m.sender);
-          } else {
-            await sendGameState(conn, m.chat, user.displayWord, user.attempts, user.incorrectGuesses);
-          }
-        }
-      } else if (m.text.toLowerCase() === 'desistir') {
-        await conn.reply(m.chat, `Você desistiu! A palavra era: '${user.word}'.`, m);
-        endGame(m.sender);
-      }
+function guessLetter(chatId, letter) {
+  const game = hangmanGames[chatId]
+  if (!game) return "Não há jogo em andamento. Use o comando /startforca para começar um jogo."
+  if (game.wordToGuess.includes(letter)) {
+    game.guessedLetters.push(letter)
+    const displayed = displayWord(game.wordToGuess, game.guessedLetters)
+    if (displayed === game.wordToGuess) {
+      // O jogador ganhou
+      delete hangmanGames[chatId]
+      return `Parabéns! Você adivinhou a palavra: ${game.wordToGuess}`
     }
-  } catch (e) {
-    console.error(e);
-  } finally {
-    user.lastmining = new Date();
-  }
-};
-
-handler.help = ['forca categoria'];
-handler.tags = ['jogo', 'diversão'];
-handler.command = ['forca'];
-
-export default handler;
-
-function getCategoryWords(category) {
-  // Lógica para obter a lista de palavras da categoria
-  // Substitua isto pela lógica real de obter palavras da categoria
-  if (category === 'categoria1') {
-    return ['palavra1', 'palavra2', 'palavra3']; // Exemplo de lista de palavras para 'categoria1'
-  } else if (category === 'categoria2') {
-    return ['apple', 'banana', 'cherry']; // Exemplo de lista de palavras para 'categoria2'
+    return `Ótimo! A palavra até agora: ${displayed}`
+  } else {
+    game.attempts--
+    if (game.attempts === 0) {
+      // O jogador perdeu
+      delete hangmanGames[chatId]
+      return `Game over! A palavra era: ${game.wordToGuess}`
+    }
+    return `Letra errada. Você tem ${game.attempts} tentativas restantes. A palavra: ${displayWord(game.wordToGuess, game.guessedLetters)}`
   }
 }
 
-function getRandomWord(wordList) {
-  // Lógica para selecionar uma palavra aleatória da lista
-  // Substitua isto pela lógica real de seleção de palavra aleatória
-  let index = Math.floor(Math.random() * wordList.length);
-  return wordList[index];
-}
-
-function createDisplayWord(word) {
-  // Crie uma representação inicial da palavra a ser adivinhada
-  let displayWord = [];
-  for (let i = 0; i < word.length; i++) {
-    displayWord.push('_');
+function endGame(chatId) {
+  if (hangmanGames[chatId]) {
+    delete hangmanGames[chatId]
+    return "Jogo da forca encerrado."
   }
-  return displayWord;
+  return "Não há jogo em andamento."
 }
 
-async function sendGameState(conn, chatId, displayWord, attempts, incorrectGuesses) {
-  // Envie o estado atual do jogo
-  let gameState = `Palavra: ${displayWord.join(' ')}\n`;
-  gameState += `Tentativas restantes: ${attempts}\n`;
-  gameState += `Tentativas incorretas: ${incorrectGuesses.join(', ')}\n`;
-  await conn.reply(chatId, gameState, null, { quoted: null });
+// Defina o seu handler para o jogo da forca
+let handler = async (m, { conn, usedPrefix, command, text }) => {
+  let chatId = m.chat
+  if (text === "startforca") {
+    return conn.sendMessage(chatId, startGame(chatId), MessageType.text)
+  } else if (text === "endforca") {
+    return conn.sendMessage(chatId, endGame(chatId), MessageType.text)
+  } else if (text.length === 1) {
+    return conn.sendMessage(chatId, guessLetter(chatId, text), MessageType.text)
+  } else {
+    return conn.sendMessage(chatId, "Comando inválido. Use " + usedPrefix + command + " startforca para começar um novo jogo.", MessageType.text)
+  }
 }
 
-function endGame(userId) {
-  // Encerre o jogo e redefina os dados do usuário
-  delete sessions[userId];
-}
+handler.command = /^(forca|hangman)$/i
+
+export default handler
