@@ -1,5 +1,5 @@
 // Importe quaisquer módulos ou bibliotecas necessárias
-
+let MessageType = (await import(global.baileys)).default
 let hangmanGames = {}
 
 function randomWord() {
