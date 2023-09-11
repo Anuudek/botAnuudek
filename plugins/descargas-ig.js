@@ -1,11 +1,9 @@
-import fetch from 'node-fetch'
-import axios from 'axios'
-import cheerio from 'cheerio'
-import instagramGetUrl from 'instagram-url-direct'
-import vm from 'node:vm'
-import { instagram } from "@xct007/frieren-scraper";
-import { instagramdl } from '@bochilteam/scraper'
-let handler = async (m, { conn, args, command, usedPrefix }) => {
+import fetch from 'node-fetch';
+import axios from 'axios';
+import instagramGetUrl from 'instagram-url-direct';
+import {instagram} from '@xct007/frieren-scraper';
+import {instagramdl} from '@bochilteam/scraper';
+const handler = async (m, {conn, args, command, usedPrefix}) => {
 const fkontak = {
         "key": {
         "participants":"0@s.whatsapp.net",
