@@ -42,7 +42,7 @@ const handler = async (m, { conn }) => {
       conn.reply(m.chat, `A letra "${letter}" não está na palavra. Tente novamente.`, m);
     }
   }
-  conn.sendFile(m.chat, global.fs.readFileSync('./src/hangman/' + hangman.length + '.jpg'), 'hangman.jpg', 'Digite uma letra para adivinhar a palavra!\n' + hangman.join(' '), m);
+  conn.sendFile(m.chat, global.fs.readFileSync('../media/forca/' + hangman.length + '.jpg'), 'forca.jpg', 'Digite uma letra para adivinhar a palavra!\n' + hangman.join(' '), m);
 };
 
 handler.command = /^hangman$/i;
