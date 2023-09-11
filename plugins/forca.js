@@ -1,74 +1,56 @@
-// Importe quaisquer módulos ou bibliotecas necessárias
 let MessageType = (await import(global.baileys)).default
-let hangmanGames = {}
+let hangman_word
+let hangman
 
-function randomWord() {
-  // Coloque aqui uma lógica para gerar uma palavra aleatória para o jogo da forca
-  // Por exemplo, você pode ter uma lista de palavras predefinidas e selecionar uma delas aleatoriamente
-  const words = ["programação", "computador", "javascript", "desenvolvimento", "openai"]
-  return words[Math.floor(Math.random() * words.length)]
-}
+let handler = async (m, { conn }) => {
+  // Matriz de palavras da forca
+  let words = [
+    "banana",
+    "computador",
+    "elefante",
+    "programação",
+    // Adicione mais palavras aqui
+  ];
 
-function displayWord(word, guessedLetters) {
-  // Crie uma função para exibir a palavra oculta com letras adivinhadas
-  return word.replace(/\w/g, letter => (guessedLetters.includes(letter) ? letter : "_"))
-}
-
-function startGame(chatId) {
-  const wordToGuess = randomWord()
-  hangmanGames[chatId] = {
-    wordToGuess,
-    guessedLetters: [],
-    attempts: 6, // Número de tentativas permitidas
-  }
-  return `Começou um novo jogo da forca! Adivinhe a palavra:\n${displayWord(wordToGuess, [])}`
-}
-
-function guessLetter(chatId, letter) {
-  const game = hangmanGames[chatId]
-  if (!game) return "Não há jogo em andamento. Use o comando /startforca para começar um jogo."
-  if (game.wordToGuess.includes(letter)) {
-    game.guessedLetters.push(letter)
-    const displayed = displayWord(game.wordToGuess, game.guessedLetters)
-    if (displayed === game.wordToGuess) {
-      // O jogador ganhou
-      delete hangmanGames[chatId]
-      return `Parabéns! Você adivinhou a palavra: ${game.wordToGuess}`
+  if (!hangman) {
+    conn.reply(m.chat, 'Um novo jogo da forca foi iniciado! Envie uma letra para adivinhar a palavra.', m)
+    hangman_word = pickRandom(words)
+    hangman = Array.from(hangman_word)
+    for (let i = 0; i < hangman.length; i++) {
+      if (hangman[i] !== ' ') hangman[i] = '_'
     }
-    return `Ótimo! A palavra até agora: ${displayed}`
   } else {
-    game.attempts--
-    if (game.attempts === 0) {
-      // O jogador perdeu
-      delete hangmanGames[chatId]
-      return `Game over! A palavra era: ${game.wordToGuess}`
+    let letter = m.text.toLowerCase()
+    if (!letter) return conn.reply(m.chat, 'Por favor, envie uma letra para adivinhar a palavra.', m)
+    if (letter.length !== 1 || !letter.match(/[a-z]/)) {
+      return conn.reply(m.chat, 'Por favor, envie uma única letra válida.', m)
     }
-    return `Letra errada. Você tem ${game.attempts} tentativas restantes. A palavra: ${displayWord(game.wordToGuess, game.guessedLetters)}`
+    if (hangman.includes(letter) || hangman.includes(letter.toUpperCase())) {
+      return conn.reply(m.chat, `A letra "${letter}" já foi escolhida anteriormente. Tente outra.`, m)
+    }
+    if (hangman_word.includes(letter) || hangman_word.includes(letter.toUpperCase())) {
+      conn.reply(m.chat, `Boa escolha! A letra "${letter}" está na palavra.`, m)
+      for (let i = 0; i < hangman_word.length; i++) {
+        if (hangman_word[i] === letter || hangman_word[i] === letter.toUpperCase()) {
+          hangman[i] = hangman_word[i]
+        }
+      }
+      if (!hangman.includes('_')) {
+        conn.reply(m.chat, `Parabéns! Você adivinhou a palavra: *${hangman_word}*.`, m)
+        hangman = null
+      }
+    } else {
+      conn.reply(m.chat, `A letra "${letter}" não está na palavra. Tente novamente.`, m)
+    }
   }
+  conn.sendFile(m.chat, global.fs.readFileSync('./media/forca/' + hangman.length + '.jpg'), 'forca.jpg', 'Digite uma letra para adivinhar a palavra!\n' + hangman.join(' '), m)
 }
 
-function endGame(chatId) {
-  if (hangmanGames[chatId]) {
-    delete hangmanGames[chatId]
-    return "Jogo da forca encerrado."
-  }
-  return "Não há jogo em andamento."
+handler.command = /^forca$/i
+
+module.exports = handler
+
+// Função para escolher uma palavra aleatória
+function pickRandom(array) {
+  return array[Math.floor(Math.random() * array.length)];
 }
-
-// Defina o seu handler para o jogo da forca
-let handler = async (m, { conn, usedPrefix, command, text }) => {
-  let chatId = m.chat
-  if (text === "startforca") {
-    return conn.sendMessage(chatId, startGame(chatId), MessageType.text)
-  } else if (text === "endforca") {
-    return conn.sendMessage(chatId, endGame(chatId), MessageType.text)
-  } else if (text.length === 1) {
-    return conn.sendMessage(chatId, guessLetter(chatId, text), MessageType.text)
-  } else {
-    return conn.sendMessage(chatId, "Comando inválido. Use " + usedPrefix + command + " startforca para começar um novo jogo.", MessageType.text)
-  }
-}
-
-handler.command = /^(forca|hangman)$/i
-
-export default handler
