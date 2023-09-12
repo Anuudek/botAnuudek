@@ -1,3 +1,6 @@
+import fs from 'fs/promises';
+import path from 'path';
+
 let hangman_words;
 let hangman;
 let category;
@@ -51,24 +54,11 @@ function startGame() {
 }
 
 // Função para carregar as palavras da forca a partir do arquivo JSON
-function loadHangmanWords() {
-  const fs = require('fs');
-  const path = require('path');
+async function loadHangmanWords() {
   const filePath = path.join(__dirname, 'hangman_words.json'); // Caminho para o arquivo JSON
-  const jsonData = fs.readFileSync(filePath, 'utf-8');
+  const jsonData = await fs.readFile(filePath, 'utf-8');
   return JSON.parse(jsonData);
 }
 
 // Função para escolher uma palavra aleatória
-function pickRandom(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
-// Função para listar as categorias disponíveis
-function getCategoryList() {
-  const categories = [...new Set(hangman_words.map((entry) => entry.tema))];
-  return categories.join(', ');
-}
-
-// Iniciar o jogo quando o módulo for carregado
-startGame();
+function⬤
