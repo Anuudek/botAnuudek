@@ -75,24 +75,24 @@ let pareja = global.db.data.users[m.sender].pasangan
 
 let menu = `\`\`\`${week}, ${date} - menu do botAnuudek\`\`\`
 
-olá, @${name}! :D
+olá, @${name}! :)
 
-esse é o menu contendo os comandos para que você possa utilizar o bot. 
+*MENU DE COMANDOS*
 
-*• menu de stickers ->* \`\`\`${usedPrefix}stickersmenu\`\`\`
-_esse menu contém todos os comandos para criar ou editar stickers_
+*->* _.menudono_
 
-*• menu de downloads ->* \`\`\`${usedPrefix}downloadsmenu\`\`\`
-_todos os comandos para fazer downloads (vídeos e fotos do instagram, twitter, youtube e etc)_
+*->* _.menuadm_
 
-*• menu de diversão ->* \`\`\`${usedPrefix}funmenu\`\`\`
-_contém alguns jogos e outros comandos legais_
+*->* _.menugeral_
 
-*• menu para administração de grupos ->* \`\`\`${usedPrefix}grupomenu\`\`\`
-_comandos para administrar grupos, necessário ser administrador_
+*->* _.menudownloads_
 
-faça bom uso do bot ;)`.trim()
-await conn.reply(m.chat, menu, m);
+*->* _.brincadeiras_
+
+*->* _.menustickers_
+
+faça bom uso do bot!`.trim()
+await conn.sendFile(m.chat, gataVidMenu.getRandom(), 'gata.mp4', menu, m)
 	
 } catch (e) {
 await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() + '*\n*' + usedPrefix + `${lenguajeGB.lenguaje() == 'es' ? 'reporte' : 'report'}` + '* ' + `${lenguajeGB.smsMensError2()} ` + usedPrefix + command)
