@@ -1,55 +1,74 @@
-let hangman_word;
+let hangman_words;
 let hangman;
+let category;
+let hint;
 
 const handler = async (m, { conn }) => {
-  // Matriz de palavras da forca
-  const words = [
-    "banana",
-    "computador",
-    "elefante",
-    "programação",
-    // Adicione mais palavras aqui
-  ];
-
   if (!hangman) {
-    conn.reply(m.chat, 'Um novo jogo da forca foi iniciado! Envie uma letra para adivinhar a palavra.', m);
-    hangman_word = pickRandom(words);
-    hangman = Array.from(hangman_word);
-    for (let i = 0; i < hangman.length; i++) {
-      if (hangman[i] !== ' ') hangman[i] = '_';
+    conn.reply(m.chat, 'Escolha uma categoria para começar o jogo da forca:\n' + getCategoryList(), m);
+    return;
+  }
+  const letter = m.text.toLowerCase();
+  if (!letter) return conn.reply(m.chat, 'Por favor, envie uma letra para adivinhar a palavra.', m);
+  if (letter.length !== 1 || !letter.match(/[a-z]/)) {
+    return conn.reply(m.chat, 'Por favor, envie uma única letra válida.', m);
+  }
+  if (hangman.includes(letter) || hangman.includes(letter.toUpperCase())) {
+    return conn.reply(m.chat, `A letra "${letter}" já foi escolhida anteriormente. Tente outra.`, m);
+  }
+  if (hangman_words.plvr.includes(letter) || hangman_words.plvr.includes(letter.toUpperCase())) {
+    conn.reply(m.chat, `Boa escolha! A letra "${letter}" está na palavra.`, m);
+    for (let i = 0; i < hangman_words.plvr.length; i++) {
+      if (hangman_words.plvr[i] === letter || hangman_words.plvr[i] === letter.toUpperCase()) {
+        hangman[i] = hangman_words.plvr[i];
+      }
+    }
+    if (!hangman.includes('_')) {
+      conn.reply(m.chat, `Parabéns! Você adivinhou a palavra: *${hangman_words.plvr}*.`, m);
+      hangman = null;
     }
   } else {
-    const letter = m.text.toLowerCase();
-    if (!letter) return conn.reply(m.chat, 'Por favor, envie uma letra para adivinhar a palavra.', m);
-    if (letter.length !== 1 || !letter.match(/[a-z]/)) {
-      return conn.reply(m.chat, 'Por favor, envie uma única letra válida.', m);
-    }
-    if (hangman.includes(letter) || hangman.includes(letter.toUpperCase())) {
-      return conn.reply(m.chat, `A letra "${letter}" já foi escolhida anteriormente. Tente outra.`, m);
-    }
-    if (hangman_word.includes(letter) || hangman_word.includes(letter.toUpperCase())) {
-      conn.reply(m.chat, `Boa escolha! A letra "${letter}" está na palavra.`, m);
-      for (let i = 0; i < hangman_word.length; i++) {
-        if (hangman_word[i] === letter || hangman_word[i] === letter.toUpperCase()) {
-          hangman[i] = hangman_word[i];
-        }
-      }
-      if (!hangman.includes('_')) {
-        conn.reply(m.chat, `Parabéns! Você adivinhou a palavra: *${hangman_word}*.`, m);
-        hangman = null;
-      }
-    } else {
-      conn.reply(m.chat, `A letra "${letter}" não está na palavra. Tente novamente.`, m);
-    }
+    conn.reply(m.chat, `A letra "${letter}" não está na palavra. Tente novamente.`, m);
   }
-  conn.sendFile(m.chat, global.fs.readFileSync('../media/forca/' + hangman.length + '.jpg'), 'forca.jpg', 'Digite uma letra para adivinhar a palavra!\n' + hangman.join(' '), m);
+  // Envie a categoria, a dica e o progresso da palavra
+  conn.reply(m.chat, `Categoria: *${category}*\nDica: ${hint}\n\n${hangman.join(' ')}`, m);
 };
 
 handler.command = /^hangman$/i;
 
 export default handler;
 
+// Função para escolher uma categoria aleatória e iniciar o jogo
+function startGame() {
+  hangman_words = loadHangmanWords();
+  const hangman_entry = pickRandom(hangman_words);
+  hangman = Array.from(hangman_entry.plvr);
+  for (let i = 0; i < hangman.length; i++) {
+    if (hangman[i] !== ' ') hangman[i] = '_';
+  }
+  category = hangman_entry.tema;
+  hint = hangman_entry.dica;
+}
+
+// Função para carregar as palavras da forca a partir do arquivo JSON
+function loadHangmanWords() {
+  const fs = require('fs');
+  const path = require('path');
+  const filePath = path.join(__dirname, 'hangman_words.json'); // Caminho para o arquivo JSON
+  const jsonData = fs.readFileSync(filePath, 'utf-8');
+  return JSON.parse(jsonData);
+}
+
 // Função para escolher uma palavra aleatória
 function pickRandom(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
+
+// Função para listar as categorias disponíveis
+function getCategoryList() {
+  const categories = [...new Set(hangman_words.map((entry) => entry.tema))];
+  return categories.join(', ');
+}
+
+// Iniciar o jogo quando o módulo for carregado
+startGame();
