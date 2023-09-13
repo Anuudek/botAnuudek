@@ -141,7 +141,7 @@ let menuB = `╭┄〔 *${wm}* 〕┄⊱
 await conn.sendButtonVid(m.chat, pp, menuA, menuB, lenguajeGB.smsBotonM1(), '.menu', lenguajeGB.smsBotonM2(), '/allmenu', lenguajeGB.smsBotonM3(), '#inventario', fkontak, adReply)  
 
   
-} if (command == 'downloadsmenu'){ //descargas
+} if (command == 'menudownloads'){ //descargas
 let menu = `*comandos de downloads*
 
 • ${usedPrefix}yta + link
@@ -171,7 +171,7 @@ _baixa algum conteúdo do tiktok._
 await conn.reply(m.chat, menu, m)
 }
 
-  if (command == 'funmenu'){ //fun
+  if (command == 'brincadeiras'){ //fun
 let menu = `*comandos fun*
 
 • ${usedPrefix}ttt + nome da sala
@@ -180,7 +180,7 @@ _abrir uma sala para jogar jogo da velha_
 await conn.reply(m.chat, menu, m)
 }
 
-  if (command == 'grupomenu'){ //grupo
+  if (command == 'menuadm'){ //grupo
 let menu = `*comandos de grupo*
 
 • ${usedPrefix}add + número
@@ -339,7 +339,7 @@ let menuB = `╭┄〔 *${wm}* 〕┄⊱
 await conn.sendButtonVid(m.chat, pp, menuA, menuB, lenguajeGB.smsBotonM1(), '.menu', lenguajeGB.smsBotonM2(), '/allmenu', lenguajeGB.smsBotonM3(), '#inventario', fkontak, adReply)
 
   
-} if (command == 'ownermenu'){ //propietario(a)
+} if (command == 'menudono'){ //propietario(a)
 let menu = `*comandos de owner*
 
 • _${usedPrefix}join *enlace*_
@@ -497,7 +497,7 @@ let menuB = `╭┄〔 *${wm}* 〕┄⊱
 await conn.sendButtonVid(m.chat, pp, menuA, menuB, lenguajeGB.smsBotonM1(), '.menu', lenguajeGB.smsBotonM2(), '/allmenu', lenguajeGB.smsBotonM3(), '#inventario', fkontak, adReply)
 
 
-} if (command == 'stickersmenu'){ //sticker
+} if (command == 'menustickers'){ //sticker
 let menu = `*comandos de stickers*
 
 • ${usedPrefix}sticker | ${usedPrefix}s
@@ -523,8 +523,8 @@ console.log(e)}
 }
 handler.help = ['infomenu'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
-handler.command = ['audioefectomenu', 'buscarmenu', 'convertidormenu', 'downloadsmenu', 'funmenu', 'grupomenu',
-'herramientasmenu', 'infomenu', 'makermenu', 'menulogos2', 'ownermenu', 'randommenu', 'rpgmenu', 'stickersmenu'] 
+handler.command = ['audioefectomenu', 'buscarmenu', 'convertidormenu', 'menudownloads', 'brincadeiras', 'menuadm',
+'herramientasmenu', 'infomenu', 'makermenu', 'menulogos2', 'menudono', 'randommenu', 'rpgmenu', 'menustickers'] 
 //handler.register = true
 handler.exp = 50
 export default handler
