@@ -22,8 +22,8 @@ m.reply(`╭━━━[ 𝙂𝘼𝙏𝘼𝘾𝙊𝙄𝙉𝙎 🐈 ]━━━⬣\n
 ['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪 ☘️', '/menu']], m)
 }*/
 handler.help = ['addgb <@user>']
-handler.tags = ['gatacoins']
-handler.command = ['añadirgatacoins', 'añadirgata', 'añadircoins', 'dargatacoins', 'dargata', 'darcoins'] 
+handler.tags = ['coins']
+handler.command = ['addcoins'] 
 handler.group = true
 handler.rowner = true
 export default handler
