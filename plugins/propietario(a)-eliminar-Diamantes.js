@@ -22,7 +22,7 @@ m.reply(`╭[ 𝘿𝙄𝘼𝙈𝘼𝙉𝙏𝙀𝙎 | 𝘿𝙄𝘼𝙈𝙊𝙉�
 }*/
 handler.help = ['adddi <@user>']
 handler.tags = ['xp']
-handler.command = ['eliminardiamantes', 'quitardiamantes', 'quitardiamante', 'deldiamante', 'deldiamantes'] 
+handler.command = ['deldima'] 
 handler.group = true
 handler.rowner = true
 export default handler 
