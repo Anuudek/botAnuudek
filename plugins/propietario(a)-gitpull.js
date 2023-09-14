@@ -1,31 +1,25 @@
 import { spawn } from 'child_process';
 
 let handler = async (m, { conn, isROwner, text }) => {
-    if (isROwner) {
-        const gitPull = spawn('sudo', ['git', 'pull'], { shell: true });
+  if (!isROwner) throw 'Somente o proprietário pode executar este comando';
 
-        gitPull.stdout.on('data', (data) => {
-            const output = data.toString();
-            conn.reply(m.chat, output, m);
-        });
+  const { key } = await conn.sendMessage(m.chat, { text: '🚀 Atualizando o bot...', quoted: m });
+  await delay(1000);
 
-        gitPull.stderr.on('data', (data) => {
-            const error = data.toString();
-            conn.reply(m.chat, error, m);
-        });
+  // Execute o comando para atualizar o repositório Git
+  const gitPullProcess = spawn('git', ['pull'], { stdio: 'inherit' });
 
-        gitPull.on('exit', (code) => {
-            if (code === 0) {
-                conn.reply(m.chat, 'Git pull executado com sucesso!', m);
-                process.send('reset');
-            } else {
-                conn.reply(m.chat, `Erro ao executar git pull (código ${code})`, m);
-            }
-        });
+  gitPullProcess.on('close', async (code) => {
+    if (code === 0) {
+      // O código 0 indica que o comando Git pull foi bem-sucedido
+      await conn.sendMessage(m.chat, { text: '✅ Atualização concluída! Reiniciando o bot...', edit: key });
+      process.send('reset'); // Reinicie o bot
     } else {
-        throw 'Apenas o dono do bot pode executar este comando.';
+      // Qualquer outro código indica um erro no comando Git pull
+      await conn.sendMessage(m.chat, { text: '❌ Ocorreu um erro durante a atualização do bot.', edit: key });
     }
-}
+  });
+};
 
 handler.help = ['gitpull'];
 handler.tags = ['owner'];
@@ -33,3 +27,5 @@ handler.command = ['gitpull'];
 handler.rowner = true;
 
 export default handler;
+
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
