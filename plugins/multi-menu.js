@@ -342,34 +342,49 @@ await conn.sendButtonVid(m.chat, pp, menuA, menuB, lenguajeGB.smsBotonM1(), '.me
 } if (command == 'menudono'){ //propietario(a)
 let menu = `*comandos de owner*
 
-• _${usedPrefix}join *enlace*_
-• _${usedPrefix}unete *enlace*_
-• _${usedPrefix}dardiamantes *cantidad*_
-• _${usedPrefix}darxp *cantidad*_
-• _${usedPrefix}dargatacoins *cantidad*_
-• _${usedPrefix}addprem | userpremium *@tag* *cantidad*_
-• _${usedPrefix}addprem2 | userpremium2 *@tag* *cantidad*_
-• _${usedPrefix}addprem3 | userpremium3 *@tag* *cantidad*_
-• _${usedPrefix}addprem4 | userpremium4 *@tag* *cantidad*_
-• _${usedPrefix}idioma | language *código*_
-• _${usedPrefix}cajafuerte_
-• _${usedPrefix}comunicar | broadcastall | bc *texto*_
-• _${usedPrefix}broadcastchats | bcc *texto*_
-• _${usedPrefix}comunicarpv *texto*_
-• _${usedPrefix}broadcastgc *texto*_
-• _${usedPrefix}comunicargrupos *texto*_
-• _${usedPrefix}borrartmp | cleartmp_
-• _${usedPrefix}delexp *@tag*_
-• _${usedPrefix}delgatacoins *@tag*_
-• _${usedPrefix}deldiamantes *@tag*_
-• _${usedPrefix}reiniciar | restart_
-• _${usedPrefix}ctualizar | update_
-• _${usedPrefix}addprem | +prem *@tag*_
-• _${usedPrefix}delprem | -prem *@tag*_
-• _${usedPrefix}listapremium | listprem_
-• _${usedPrefix}añadirdiamantes *@tag cantidad*_
-• _${usedPrefix}añadirxp *@tag cantidad*_
-• _${usedPrefix}añadirgatacoins *@tag cantidad*_
+• _${usedPrefix}addprem_
+• _${usedPrefix}addprem2_
+• _${usedPrefix}addprem3_
+• _${usedPrefix}addprem4_
+• _${usedPrefix}delprem_
+• _${usedPrefix}autoadmin_
+• _${usedPrefix}adddima_
+• _${usedPrefix}deldima_
+• _${usedPrefix}addexp_
+• _${usedPrefix}delexp_
+• _${usedPrefix}addcoins_
+• _${usedPrefix}delcoins_
+• _${usedPrefix}addtokens_
+• _${usedPrefix}backup_
+• _${usedPrefix}banchat_
+• _${usedPrefix}banperma_
+• _${usedPrefix}unbanperma_
+• _${usedPrefix}block_
+• _${usedPrefix}unblock_
+• _${usedPrefix}boost_
+• _${usedPrefix}broadcast | bc + group_
+• _${usedPrefix}broadcastprivates | ${usedPrefix}bcpvs_
+• _${usedPrefix}broadcastall_
+• _${usedPrefix}clearallsession_
+• _${usedPrefix}cleartmp_
+• _${usedPrefix}cmdadd_
+• _${usedPrefix}cmddel_
+• _${usedPrefix}cmdlist
+• _${usedPrefix}disablewa_
+• _${usedPrefix}getplugin_
+• _${usedPrefix}gitpull_
+• _${usedPrefix}language_
+• _${usedPrefix}join + link_
+• _${usedPrefix}leave_
+• _${usedPrefix}notify_
+• _${usedPrefix}notify2_
+• _${usedPrefix}deldatauser_
+• _${usedPrefix}report_
+• _${usedPrefix}restart_
+• _${usedPrefix}staffmeet_
+• _${usedPrefix}setbotbio_
+• _${usedPrefix}setbotname_
+• _${usedPrefix}setppbot_
 `.trim()
 await conn.reply(m.chat, menu, m)
 } 
