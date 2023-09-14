@@ -10,7 +10,7 @@ let handler = async (m, { usedPrefix, command, text }) => {
 }
 handler.help = ['getplugin'].map(v => v + ' <teks>')
 handler.tags = ['host']
-handler.command = /^(getplugin|gp)$/i
+handler.command = /^(getplugin)$/i
 
 handler.rowner = true
 
