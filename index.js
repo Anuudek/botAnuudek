@@ -5,6 +5,7 @@ import { setupMaster, fork } from "cluster";
 import { watchFile, unwatchFile } from "fs";
 import cfonts from "cfonts";
 import chalk from "chalk";
+import util from "util"
 import { createInterface } from "readline";
 import yargs from "yargs";
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -24,7 +25,7 @@ gradient: ['red', 'magenta']});
 
 var isRunning = false;
 /**
-* Start a js file
+* Start a js file 
 * @param {String} file `path/to/file`
 */
 function start(file) {
