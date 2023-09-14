@@ -14,7 +14,7 @@ for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper 
 
 }
 handler.tags = ['owner']
-handler.command = handler.help =['reunionstaff']
+handler.command = handler.help =['staffmeet']
 handler.rowner = true
 
 export default handler
