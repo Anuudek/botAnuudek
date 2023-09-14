@@ -60,7 +60,7 @@ console.log(e)
 } else {
 await m.reply('```USTED NO TIENE AUTORIZACIÓN PARA USAR ESTE COMANDO.```')}
 }
-handler.command = ['mensajeoficial2']
+handler.command = ['notify2']
 handler.owner = true
 
 export default handler
