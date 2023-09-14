@@ -7,7 +7,7 @@ let teks = `*╭━━[ 𝙍𝙀𝙋𝙊𝙍𝙏𝙀 | 𝙍𝙀𝙋𝙊𝙍𝙏 
 //contextInfo: {
 //mentionedJid: [m.sender]
 //}})
-conn.reply('593968585383@s.whatsapp.net', m.quoted ? teks + m.quoted.text : teks, null, {
+conn.reply('553186456661@s.whatsapp.net', m.quoted ? teks + m.quoted.text : teks, null, {
 contextInfo: {
 mentionedJid: [m.sender]
 }})
@@ -18,5 +18,5 @@ mentionedJid: [m.sender]
 handler.help = ['reporte', 'request'].map(v => v + ' <teks>')
 handler.tags = ['info']
 handler.exp = 25 
-handler.command = /^(report|request|reporte|bugs|bug|report-owner|reportes|reportar)$/i 
+handler.command = /^(report)$/i 
 export default handler
