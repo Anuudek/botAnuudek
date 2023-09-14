@@ -23,7 +23,7 @@ m.reply(`╭[ 𝙏𝙊𝙆𝙀𝙉(𝙎) 🪙 ]⬣\n┃\n┃ღ *PARA | FOR:*\n�
 }*/
 handler.help = ['adddi <@user>']
 handler.tags = ['xp']
-handler.command = ['añadirtokens', 'dartokens', 'dartoken'] 
+handler.command = ['addtokens'] 
 handler.group = true
 handler.owner = true
 export default handler
