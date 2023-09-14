@@ -26,9 +26,9 @@ time = `${time} segundos`
 }
 await m.reply(lenguajeGB.smsBCMensaje3(totalPri, time)) 
 }
-handler.help = ['broadcastchats', 'bcchats'].map(v => v + ' <teks>')
+handler.help = ['broadcastprivates', 'bcpvs'].map(v => v + ' <teks>')
 handler.tags = ['owner']
-handler.command = /^(broadcastchats?|bcc(hats?)?)$/i
+handler.command = /^(broadcastprivates?|bcpvs?)$/i
 
 handler.owner = true
 
