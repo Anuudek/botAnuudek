@@ -28,7 +28,7 @@ await conn.sendMessage(m.chat, {text: finish, edit: key});
 }
 handler.help = ['boost', 'refresh']
 handler.tags = ['info']
-handler.command = /^boost|refresh/i
+handler.command = /^boost/i
 handler.owner = true
 handler.fail = null
 export default handler 
