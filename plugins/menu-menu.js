@@ -1,4 +1,5 @@
 import fs from 'fs'
+import moment from 'moment-timezone'
 import fetch from 'node-fetch'
 import { xpRange } from '../lib/levelling.js'
 const { levelling } = '../lib/levelling.js'
@@ -72,8 +73,15 @@ let pareja = global.db.data.users[m.sender].pasangan
 //const numberToEmoji = { "0": "0️⃣", "1": "1️⃣", "2": "2️⃣", "3": "3️⃣", "4": "4️⃣", "5": "5️⃣", "6": "6️⃣", "7": "7️⃣", "8": "8️⃣", "9": "9️⃣", }
 //let lvl = level
 //let emoji = Array.from(lvl.toString()).map((digit) => numberToEmoji[digit] || "❓").join("")
-
-let menu = `\`\`\`${week}, ${date} - menu do botAnuudek\`\`\`
+const lugarFecha = moment().tz('America/Sao_Paulo')
+const formatoFecha = {
+weekdays: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
+months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+}
+lugarFecha.locale('es', formatoFecha)
+const horarioFecha = lugarFecha.format('dddd, DD [de] MMMM [del] YYYY|| HH:mm A').replace(/^\w/, (c) => c.toUpperCase())
+	
+let menu = `\`\`\`${horarioFecha} - menu do botAnuudek\`\`\`
 
 olá, @${name}! :)
 
