@@ -176,6 +176,9 @@ let menu = `*comandos fun*
 
 • ${usedPrefix}ttt + nome da sala
 _abrir uma sala para jogar jogo da velha_
+
+• ${usedPrefix}perguntas
+_perguntas aleatórias para serem respondidas_
 `.trim()
 await conn.reply(m.chat, menu, m)
 }
