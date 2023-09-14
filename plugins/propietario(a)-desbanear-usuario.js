@@ -31,7 +31,7 @@ conn.reply(m.chat, `*@${number} HA SIDO DESBANEADO(A) DE LA BASE DE DATOS*`, nul
 }}
 
 handler.tags = ['owner']
-handler.command = ['desbanearuser', 'desbanearusuario', 'desbanear'] 
+handler.command = ['unbanperma'] 
 handler.owner = true
 
 export default handler
