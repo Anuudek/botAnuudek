@@ -24,7 +24,7 @@ let handler = async (m, { conn, isROwner, text }) => {
 };
 
 handler.help = ['gitpull'];
-handler.tags = ['owner'];
+handler.tags = ['host'];
 handler.command = ['gitpull'];
 handler.rowner = true;
 
