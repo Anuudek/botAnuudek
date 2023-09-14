@@ -9,7 +9,7 @@ let handler = async (m, { conn, isROwner, text }) => {
   // Execute o comando para atualizar o repositório Git
   const gitPullProcess = spawn('git', ['pull'], { stdio: 'inherit' });
 
-  gitPullProcess.on('close', async (code) => {
+  gitPullProcess.on('exit', async (code) => {
     if (code === 0) {
       // O código 0 indica que o comando Git pull foi bem-sucedido
       await conn.sendMessage(m.chat, { text: '✅ Atualização concluída! Reiniciando o bot...', edit: key });
