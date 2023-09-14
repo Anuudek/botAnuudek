@@ -45,7 +45,7 @@ await m.reply(`${lenguajeGB.smsBCbot1()}
 }
 handler.help = ['broadcast', 'bc'].map(v => v + ' <teks>')
 handler.tags = ['owner']
-handler.command = /^(comunicar|comunicado|broadcastall|bc)$/i
+handler.command = /^(broadcastall|bc)$/i
 
 handler.owner = true
 
