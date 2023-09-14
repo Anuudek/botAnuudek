@@ -79,7 +79,7 @@ weekdays: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-f
 months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 }
 lugarFecha.locale('pt', formatoFecha)
-const horarioFecha = lugarFecha.format('dddd, DD [de] MMMM [del] YYYY|| HH:mm A').replace(/^\w/, (c) => c.toUpperCase())
+const horarioFecha = lugarFecha.format('dddd, DD [de] MMMM [de] YYYY || HH:mm A').replace(/^\w/, (c) => c.toUpperCase())
 	
 let menu = `\`\`\`${horarioFecha} - menu do botAnuudek\`\`\`
 
