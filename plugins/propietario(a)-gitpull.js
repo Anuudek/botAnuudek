@@ -12,8 +12,10 @@ let handler = async (m, { conn, isROwner, text }) => {
   gitPullProcess.on('exit', async (code) => {
     if (code === 0) {
       // O código 0 indica que o comando Git pull foi bem-sucedido
-      await conn.sendMessage(m.chat, { text: '✅ Atualização concluída! Reiniciando o bot...', edit: key });
-      process.send('reset'); // Reinicie o bot
+      await conn.sendMessage(m.chat, { text: '✅ Atualização concluída! Reiniciando o bot em 5 segundos...', edit: key });
+      setTimeout(() => {
+        process.send('reset'); // Reinicie o bot após um atraso de 2 segundos
+      }, 2000);
     } else {
       // Qualquer outro código indica um erro no comando Git pull
       await conn.sendMessage(m.chat, { text: '❌ Ocorreu um erro durante a atualização do bot.', edit: key });
