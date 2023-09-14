@@ -16,7 +16,7 @@ await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() 
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)
 console.log(e)}}
 
-handler.command = /^(backup|respaldo|copia)$/i
+handler.command = /^(backup)$/i
 handler.owner = true
 
 export default handler
