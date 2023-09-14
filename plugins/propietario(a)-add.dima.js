@@ -20,9 +20,9 @@ m.reply(`╭[ 𝘿𝙄𝘼𝙈𝘼𝙉𝙏𝙀𝙎 | 𝘿𝙄𝘼𝙈𝙊𝙉�
 ['💗 𝙈𝙚𝙣𝙪 𝘼𝙫𝙚𝙣𝙩𝙪𝙧𝙖 | 𝙍𝙋𝙂 💗', '.rpgmenu'],
 ['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪 ☘️', '/menu']], m)
 }*/
-handler.help = ['adddi <@user>']
+handler.help = ['adddima <@user>']
 handler.tags = ['xp']
-handler.command = ['añadirdiamantes', 'dardiamantes', 'dardiamante'] 
+handler.command = ['adddima'] 
 handler.group = true
 handler.rowner = true
 export default handler
