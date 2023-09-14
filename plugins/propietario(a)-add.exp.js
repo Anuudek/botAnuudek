@@ -22,7 +22,7 @@ m.reply(`╭━[ 𝙀𝙓𝙋𝙀𝙍𝙄𝙀𝙉𝘾𝙄𝘼 | 𝙀𝙓𝙋 ⚡
 }*/
 handler.help = ["ddxp  [@user]"]
 handler.tags = ['xp']
-handler.command = ['añadirxp', 'añadirexp', 'añadirexperiencia', 'darexperiencia', 'darxp', 'darexp'] 
+handler.command = ['addexp'] 
 handler.group = true
 handler.rowner = true
 export default handler
