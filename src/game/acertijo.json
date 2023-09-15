@@ -1,418 +1,354 @@
 [
     {
-        "question": "¿Qué le dice un pingüino a otro pingüino?",
-        "response": "Te quiero como a ningüino" 
+        "question": "Qual animal tem quatro patas e mia, mas não é um gato?",
+        "response": "Um cachorro."
     },
     {
-        "question": "El que lo hace, no lo quiere; el que lo compra, no lo usa; el que lo usa, no lo sabe. ¿Qué es?",
-        "response": "Un ataúd" 
+        "question": "O que tem chaves, mas não abre portas?",
+        "response": "Um teclado."
     },
     {
-        "question": "Puede correr pero nunca caminar, tiene una boca pero nunca habla. ¿Qué es?",
-        "response": "Un río" 
+        "question": "O que sobe e desce, mas nunca se move?",
+        "response": "Uma escada."
     },
     {
-        "question": "Tiene llaves pero no puede abrir cerraduras. ¿Qué es?",
-        "response": "Un piano" 
+        "question": "O que você pode segurar, mas nunca por muito tempo?",
+        "response": "A respiração."
     },
     {
-        "question": "Sube y baja, pero nunca se mueve. ¿Qué es?",
-        "response": "Una escalera" 
+        "question": "O que tem folhas, mas não é uma árvore, e tem páginas, mas não é um livro?",
+        "response": "Um jornal."
     },
     {
-        "question": "Soy una palabra de 7 letras, si me pronuncias, te dejo sin aire. Si me agregas una letra más, pareceré bastante frío, pero si me quitas una, seré necesario. ¿Qué soy?",
-        "response": "Silencio" 
+        "question": "O que fica preto quando você compra, vermelho quando você usa e cinza quando você joga fora?",
+        "response": "O carvão."
     },
     {
-        "question": "Entra en la casa por la ventana, pero nunca sale por la puerta. ¿Qué es?",
-        "response": "La luz del sol" 
+        "question": "O que tem raízes, mas não é uma planta?",
+        "response": "Uma árvore genealógica."
     },
     {
-        "question": "Siempre estoy delante de ti, pero nunca puedes verme. ¿Qué soy?",
-        "response": "El futuro" 
+        "question": "O que começa e termina com a letra 'E' e você pode enviar pelo correio?",
+        "response": "Um envelope."
     },
     {
-        "question": "Nunca puedes mantenerme hasta que me das. ¿Qué soy?",
-        "response": "Tu palabra" 
+        "question": "O que tem dentes, mas não pode mastigar?",
+        "response": "Um pente."
     },
     {
-        "question": "Soy un símbolo que siempre sigue a la R, pero nunca a la T. ¿Qué soy?",
-        "response": "La letra E" 
+        "question": "O que é sempre novo, mas nunca é velho?",
+        "response": "O hoje."
     },
     {
-        "question": "Cuanto más te quito, más grande me vuelvo. ¿Qué soy?",
-        "response": "Un agujero" 
+        "question": "O que é redondo como uma moeda, mas não tem valor?",
+        "response": "Um botão."
     },
     {
-        "question": "Tengo ciudades, pero no edificios. Tengo selvas, pero no árboles. Tengo ríos, pero no agua. ¿Qué soy?",
-        "response": "Un mapa" 
+        "question": "O que você pode encontrar no meio do mar, mas nunca molhará os pés?",
+        "response": "Uma ilha."
     },
     {
-        "question": "Tiene llaves, pero no puede abrir ninguna puerta. A veces tiene números, pero nunca hace cálculos. ¿Qué es?",
-        "response": "Un teclado" 
+        "question": "O que é, o que é: Tem coroa, mas não é rei, tem escamas, mas não é peixe?",
+        "response": "Um abacaxi."
     },
     {
-        "question": "Soy un lugar donde todos corren, pero nadie se mueve. Siempre estoy lleno, pero nunca hay multitud. ¿Qué soy?",
-        "response": "Un sueño" 
+        "question": "O que é, o que é: Tem folhas, mas não é um livro, tem raízes, mas não é uma árvore?",
+        "response": "Uma planta."
     },
     {
-        "question": "Soy el comienzo de la sabiduría, el final de la vida y el medio de la oscuridad. ¿Qué soy?",
-        "response": "La letra E" 
+        "question": "O que é, o que é: Fica preto quando você compra, vermelho quando você usa e cinza quando você joga fora?",
+        "response": "O carvão."
     },
     {
-        "question": "Soy un número que siempre está en medio de 5 y 9. ¿Qué soy?",
-        "response": "El número 7" 
+        "question": "Quem foi o diretor do filme 'Avatar'?",
+        "response": "James Cameron."
     },
     {
-        "question": "Soy una palabra de 12 letras, aunque si me pronuncias, tendrás una de las 12 partes. Si me escribes, tendrás todas las 12. ¿Qué soy?",
-        "response": "El alfabeto" 
+        "question": "Qual é a maior montanha do mundo?",
+        "response": "O Monte Everest."
     },
     {
-        "question": "Tengo ojos, pero nunca lloro. Tengo un corazón, pero nunca amo. ¿Qué soy?",
-        "response": "Un espantapájaros" 
+        "question": "O que é conhecido como o 'Planeta Vermelho'?",
+        "response": "Marte."
     },
     {
-        "question": "Soy un agujero que puedes llenar con objetos, pero si lo llenas con agua, desapareceré. ¿Qué soy?",
-        "response": "Un agujero negro" 
+        "question": "Qual é o nome da primeira mulher a viajar para o espaço?",
+        "response": "Valentina Tereshkova."
     },
     {
-        "question": "Tengo un cuello pero no tengo cabeza, y te acompaño en la cama todas las noches. ¿Qué soy?",
-        "response": "Una almohada" 
+        "question": "Qual é o maior animal terrestre do mundo?",
+        "response": "O elefante africano."
     },
     {
-        "question": "Soy un lugar donde las personas van cuando están rotas, pero nunca necesito ser reparado. ¿Qué soy?",
-        "response": "Un espejo" 
+        "question": "Qual é a moeda oficial do Japão?",
+        "response": "O iene."
     },
     {
-        "question": "Tengo hojas, pero no soy un árbol. Tengo una cara, pero no soy una persona. ¿Qué soy?",
-        "response": "Un libro" 
+        "question": "Qual é a fórmula química da água?",
+        "response": "H2O."
     },
     {
-        "question": "Soy un camino que puedes caminar, pero siempre estás retrocediendo. ¿Qué soy?",
-        "response": "Una escalera" 
+        "question": "Em que país nasceu o tango?",
+        "response": "Argentina."
     },
     {
-        "question": "Nunca puedes tocarlo, pero siempre está frente a ti. ¿Qué es?",
-        "response": "El futuro" 
+        "question": "Quem pintou a 'Mona Lisa'?",
+        "response": "Leonardo da Vinci."
     },
     {
-        "question": "Tengo un ojo pero no puedo ver. ¿Qué soy?",
-        "response": "Una aguja" 
+        "question": "Qual é a capital da Austrália?",
+        "response": "Canberra."
     },
     {
-        "question": "Siempre estoy en el agua, pero nunca me mojo. ¿Qué soy?",
-        "response": "Una sombra" 
+        "question": "Qual é o nome do personagem principal da série de livros 'Harry Potter'?",
+        "response": "Harry Potter."
     },
     {
-        "question": "Puedo volar sin alas, siempre estoy cerca del suelo, pero nunca me caigo. ¿Qué soy?",
-        "response": "Un sueño" 
+        "question": "Quem é o autor de 'Dom Quixote'?",
+        "response": "Miguel de Cervantes."
     },
     {
-        "question": "Soy redondo como una moneda, pero no tengo valor. ¿Qué soy?",
-        "response": "Un botón" 
+        "question": "Qual é a maior cordilheira do mundo?",
+        "response": "Os Himalaias."
     },
     {
-        "question": "Soy una palabra de cinco letras y me temen más que a la muerte. Si me quitas la primera letra, tendrás un lugar donde la gente vive. ¿Qué soy?",
-        "response": "Cárcel" 
+        "question": "Qual é o nome do rio que passa pela cidade do Rio de Janeiro?",
+        "response": "O Rio Guanabara."
     },
     {
-        "question": "Soy un lugar donde nunca se puede entrar, pero siempre puedes ver lo que está dentro. ¿Qué soy?",
-        "response": "Un ojo" 
+        "question": "Qual é o maior deserto do mundo?",
+        "response": "O Deserto do Saara."
     },
     {
-        "question": "Tengo dientes, pero no puedo masticar. ¿Qué soy?",
-        "response": "Un peine" 
+        "question": "Quem é o personagem principal do filme 'Forrest Gump'?",
+        "response": "Forrest Gump."
     },
     {
-        "question": "Soy un agujero en el agua que puedes llenar con una taza. ¿Qué soy?",
-        "response": "Un agujero de llave" 
+        "question": "Qual é o maior oceano do mundo?",
+        "response": "O Oceano Pacífico."
     },
     {
-        "question": "Tengo una cabeza, un cuerpo, pero no tengo alma. ¿Qué soy?",
-        "response": "Un muñeco" 
+        "question": "Qual é o nome da série de televisão em que um grupo de amigos vive em Nova York?",
+        "response": "Friends."
     },
     {
-        "question": "Tengo manos y una cara, pero no tengo cuerpo. ¿Qué soy?",
-        "response": "Un reloj" 
+        "question": "Qual é a capital da França?",
+        "response": "Paris."
     },
     {
-        "question": "Soy una cosa que es más útil cuando está rota. ¿Qué soy?",
-        "response": "Un huevo" 
+        "question": "Quem é o autor de 'Romeu e Julieta'?",
+        "response": "William Shakespeare."
     },
     {
-        "question": "Soy un lugar donde puedes encontrar tesoros y libros, pero nunca encontrarás oro ni palabras. ¿Qué soy?",
-        "response": "Una biblioteca" 
+        "question": "Qual é o símbolo químico para o ouro?",
+        "response": "Au."
     },
     {
-        "question": "Si me nombras, me rompes. ¿Qué soy?",
-        "response": "El silencio" 
+        "question": "Qual é o maior mamífero marinho do mundo?",
+        "response": "A baleia azul."
     },
     {
-        "question": "Soy un número sin fin, pero siempre empiezo con un 1. ¿Qué soy?",
-        "response": "El número Pi" 
+        "question": "Quem foi o primeiro homem a pisar na Lua?",
+        "response": "Neil Armstrong."
     },
     {
-        "question": "¿Qué le dice un ciego a otro ciego?",
-        "response": "Después nos vemos"
+        "question": "Qual é o planeta mais próximo do Sol?",
+        "response": "Mercúrio."
     },
     {
-        "question": "¿En qué se parece un alfiler a un policía?",
-        "response": "En que los dos prenden"
+        "question": "Qual é o nome do famoso cachorro que sempre viaja com o Pica-Pau?",
+        "response": "Leôncio."
     },
     {
-        "question": "¿Qué se congela cuando se calienta?",
-        "response": "La computadora"
+        "question": "Qual é a maior catarata do mundo em volume de água?",
+        "response": "As Cataratas do Iguaçu."
     },
     {
-        "question": "¿Qué fruta tiene muchos ojos, pero no puede ver?",
-        "response": "La piña"
+        "question": "Quem é a autora da série de livros 'Harry Potter'?",
+        "response": "J.K. Rowling."
     },
     {
-        "question": "¿En qué idioma se comunican las tortugas?",
-        "response": "En tortugués"
+        "question": "O que acontece uma vez em um minuto, duas vezes em um momento e nunca em cem anos?",
+        "response": "A letra 'M'."
     },
     {
-        "question": "¿Cómo llama un policía sevillano a su pistola?",
-        "response": "Mi arma"
+        "question": "O que é que é, que quanto mais você tira, mais ele cresce?",
+        "response": "Um buraco."
     },
     {
-        "question": "¿Qué es todo para uno y nada para lo demás?",
-        "response": "La mente"
+        "question": "O que é, o que é: tem asa, mas não voa; tem bico, mas não pica?",
+        "response": "Um avião de brinquedo."
     },
     {
-        "question": "¿Cuál es el colmo de una aspiradora?",
-        "response": "Ser alérgica al polvo"
+        "question": "Qual é o mês do ano que tem 28 dias?",
+        "response": "Todos os meses têm pelo menos 28 dias."
     },
     {
-        "question": "¿Qué es aquello que si nombras, desaparece?",
-        "response": "El silencio"
+        "question": "O que é, o que é: tem dentes, mas não pode mastigar?",
+        "response": "Um pente."
     },
     {
-        "question": "¿Qué necesitamos para escribir durmiendo?",
-        "response": "Estar despiertos"
+        "question": "O que é, o que é: sempre corre, mas nunca sai do lugar?",
+        "response": "A esteira."
     },
     {
-        "question": "¿Qué objeto puede tener cara sin poseer cuerpo?",
-        "response": "Una moneda"
+        "question": "O que é, o que é: vai e volta, mas nunca se move?",
+        "response": "O portão."
     },
     {
-        "question": "Alimenta la casa, Gabinete con hielo",
-        "response": "La nevera"
+        "question": "O que é, o que é: tem folhas, mas não é uma árvore, tem páginas, mas não é um livro?",
+        "response": "Um jornal."
     },
     {
-        "question": "¿Qué tienen las mujeres en medio de las piernas?",
-        "response": "Las rodillas"
+        "question": "Qual é o animal que sempre está pronto para a guerra?",
+        "response": "O boi de guerra."
     },
     {
-        "question": "Entra duro y seco y sale blandito y mojado ¿Qué es?",
-        "response": "Un chicle"
+        "question": "O que é, o que é: fica preto quando você compra, vermelho quando você usa e cinza quando você joga fora?",
+        "response": "O carvão."
     },
     {
-        "question": "Estoy en todo y estoy en nada ¿qué soy?",
-        "response": "La letra d"
+        "question": "O que é, o que é: tem chaves, mas não abre portas?",
+        "response": "Um teclado."
     },
     {
-        "question": "Continuas en rojo, pero te paras en verde. ¿Qué soy?",
-        "response": "Una sandía"
+        "question": "O que é, o que é: é redondo como uma moeda, mas não tem valor?",
+        "response": "Um botão."
     },
     {
-        "question": "¿Qué es negro cuando lo compras, rojo cuando lo usas, y gris cuando lo tiras?",
-        "response": "El carbón"
+        "question": "O que é, o que é: você pode segurar, mas nunca por muito tempo?",
+        "response": "A respiração."
     },
     {
-        "question": "¿Qué hay delante de ti siempre pero que no se puede ver?",
-        "response": "El futuro"
+        "question": "O que é, o que é: tem raízes, mas não é uma planta?",
+        "response": "Uma árvore genealógica."
     },
     {
-        "question": "¿Qué mes tiene 28 días?",
-        "response": "Todos"
+        "question": "O que é, o que é: sempre sobe, mas nunca desce?",
+        "response": "Sua idade."
     },
     {
-        "question": "¿Cómo puede estar alguien sin dormir diez días y no tener sueño?",
-        "response": "Durmiendo por las noches"
+        "question": "O que é, o que é: começa e termina com a letra 'E' e você pode enviar pelo correio?",
+        "response": "Um envelope."
     },
     {
-        "question": "¿De qué llenarías un barril para que pese lo menos posible?",
-        "response": "De agujeros"
+        "question": "Qual é a parte do carro que fica apaixonada?",
+        "response": "O pára-choque."
     },
     {
-        "question": "Si durante una carrera adelantas a quien va segundo, ¿en qué posición estás?",
-        "response": "Segundo"
+        "question": "O que um esqueleto pede para comer?",
+        "response": "Costela."
     },
     {
-        "question": "¿En qué lugar el jueves va antes que el miércoles?",
-        "response": "En el diccionario"
+        "question": "Qual é o casal mais rápido do mundo?",
+        "response": "Feijão com arroz, porque juntos fazem um prato cheio."
     },
     {
-        "question": "¿Qué sube y baja pero se queda siempre en el mismo sitio?",
-        "response": "Las escaleras"
+        "question": "O que o zero disse para o oito?",
+        "response": "Gosto do seu cinto!"
     },
     {
-        "question": "¿Cómo llaman a un ascensor en China?",
-        "response": "Apretando el botón"
+        "question": "Por que o livro de matemática cometeu suicídio?",
+        "response": "Porque tinha muitos problemas."
     },
     {
-        "question": "¿Qué es lo primero que hace un elefante al salir el sol?",
-        "response": "Sombra"
+        "question": "Qual é o lugar mais silencioso do mundo?",
+        "response": "A página 2 do Google."
     },
     {
-        "question": "¿Por qué un Tiranosaurus Rex no puede aplaudir?",
-        "response": "Porque se extinguió"
+        "question": "O que o advogado do frango foi fazer na delegacia?",
+        "response": "Foi soltar a franga."
     },
     {
-        "question": "¿Qué animal siempre está lleno?",
-        "response": "La ballena"
+        "question": "O que a minhoca disse para a cobra?",
+        "response": "Você que rasteje, que eu vou a pé mesmo."
     },
     {
-        "question": "¿Qué es lo primero que todos hacemos al despertar?",
-        "response": "Abrir los ojos"
+        "question": "Qual é o fim da picada?",
+        "response": "O coelho."
     },
     {
-        "question": "¿Cuál es el número que si le quitas la mitad, vale 0?",
-        "response": "El ocho"
+        "question": "Qual é o contrário de volátil?",
+        "response": "Vem cá, sobrinho."
     },
     {
-        "question": "¿Qué se necesita para encender una vela?",
-        "response": "Que esté apagada"
+        "question": "Qual é o lugar em que todos gostam de ser presos?",
+        "response": "A fotografia."
     },
     {
-        "question": "¿Cuál es el país donde termina todo?",
-        "response": "Finlandia"
+        "question": "Por que o esqueleto não brigou com ninguém?",
+        "response": "Porque não tinha estômago para isso."
     },
     {
-        "question": "La respuesta a esta pregunta es #######",
-        "response": "#######"
+        "question": "O que é um pontinho amarelo na praia?",
+        "response": "Um intenso brócolis."
     },
     {
-        "question": "Cuál es el final de todo",
-        "response": "La letra o"
+        "question": "O que é, o que é: quanto mais se tira, maior fica?",
+        "response": "Um buraco."
     },
     {
-        "question": "¿Dónde se encuentra una pared con otra pared?",
-        "response": "En la esquina"
+        "question": "Qual é o fim da picada?",
+        "response": "O mosquito."
     },
     {
-        "question": "¿Qué tiene muchas palabras, pero nunca habla?",
-        "response": "Un libro"
+        "question": "O que é uma parede deitada?",
+        "response": "Um móvel."
     },
     {
-        "question": "¿Qué cosa te pertenece, pero los demás usan más que tú?",
-        "response": "Tu nombre"
+        "question": "O que é uma coisa que está no meio do Rio de Janeiro?",
+        "response": "A letra 'i'."
     },
     {
-        "question": "¿En qué momento una persona se convierte en fruta?",
-        "response": "Cuando espera"
+        "question": "O que é uma coisa que sobe e nunca mais desce?",
+        "response": "Sua idade."
     },
     {
-        "question": "Los padres de José tienen tres hijos: Luis, Raúl y…, ¿cómo se llama el tercero?",
-        "response": "José"
+        "question": "Qual é o fim da picada?",
+        "response": "O formigueiro."
     },
     {
-        "question": "¿Qué palabra del diccionario se escribe incorrectamente?",
-        "response": "Incorrectamente"
+        "question": "O que é que, quando você está indo, está voltando ao mesmo tempo?",
+        "response": "O caminho."
     },
     {
-        "question": "Húmedo por dentro, con pelos por fuera. Comienza por la C. ¿De qué se trata?",
-        "response": "Un coco"
+        "question": "Qual é o mês mais curto do ano?",
+        "response": "Maio."
     },
     {
-        "question": "David y Fabián están jugando al ajedrez. Llevan 5 partidas, pero ambos han ganado 3. ¿Cómo es posible?",
-        "response": "Porque juegan con más personas"
+        "question": "O que é que você sempre pega, mas nunca vê?",
+        "response": "Resfriado."
     },
     {
-        "question": "¿Cuántos 9 hay entre el 1 y el 100?",
-        "response": "20"
+        "question": "Qual é o lugar onde todo mundo se senta, mas ninguém come?",
+        "response": "O cinema."
     },
     {
-        "question": "Son dos abanicos que están todo el día sin parar, pero cuando te duermas se paran y quietos se quedarán",
-        "response": "Las pestañas"
+        "question": "O que é que quanto mais você tira, maior ele fica?",
+        "response": "Um buraco."
     },
     {
-        "question": "Oro parece, plata no es y el que no lo adivine un tonto es",
-        "response": "Un platano"
+        "question": "O que é que não tem pernas, mas anda?",
+        "response": "A cama."
     },
     {
-        "question": "Círculo bien redondo al que si le pegas, das un brinco del susto",
-        "response": "Un tambor"
+        "question": "O que é que você não vê, mas está sempre na frente?",
+        "response": "O futuro."
     },
     {
-        "question": "Un caballo blanco entró en el Mar Negro. ¿Cómo salió?",
-        "response": "Salió mojado"
+        "question": "O que é, o que é: está sempre atrás do tempo?",
+        "response": "O rabo."
     },
     {
-        "question": "Si un tren eléctrico va de Norte a Sur, ¿Hacia qué lado echará el humo?",
-        "response": "Es eléctrico, no echa humo"
+        "question": "O que é, o que é: quando você olha, ele olha de volta?",
+        "response": "Um espelho."
     },
     {
-       "question": "Tiene 4 letras, empieza por C y termina por O y esta en la parte trasera",
-        "response": "El codo"
+        "question": "O que é, o que é: tem coroa, mas não é rei, tem escamas, mas não é peixe?",
+        "response": "Um abacaxi."
     },
     {
-       "question": "Se estrella un avión y mueren todos, justo en la frontera entre España y Portugal ¿A que Hospital tienen que llevar a los supervivientes? ",
-        "response": "No hay supervivientes"
-    },
-    {
-       "question": "Este banco está ocupado por un padre y por un hijo, el padre se llama Juan y el hijo ya te lo he dicho",
-        "response": "Esteban"
-    },
-    {
-       "question": "Algunos meses tienen 31 días, otros solo 30.¿Cuantos tienen 28 días?",
-        "response": "Todos"
-    },
-    {
-       "question": "¿Que es lo que puedes encontrar una vez en un minutos, dos veces en un momento y ninguna vez cien años",
-        "response": "La letra M"
-    },
-    {
-       "question": "¿Que llanta no gira a la derecha?",
-        "response": "las llanta de respuesto"
-    },
-    {
-       "question": "la gente me compra para comer pero nunca me come ¿que soy?",
-        "response": "un plato"
-    },
-    {
-       "question": "Matamos y alentamos tu decides si somos un venemos o un dulce ¿que somos?",
-        "response": "las palabras"
-    },
-    {
-       "question": "¿con que manos es mejor revolver el caldo?",
-        "response": "es mejor usar una cuchara"
-    },
-    {
-       "question": "¿quien se moja mientras seca?",
-        "response": "la toalla"
-    },
-    {
-       "question": "Cuantos mas le quitas, mas grande se vuelve. ¿que es?",
-        "response": "un foso"
-    },
-    {
-       "question": "¿Que palabra es p_ta?",
-        "response": "pata"
-    },
-    {
-       "question": "tengo un par, van colgando y al camina se van desplazando ¿que son?",
-        "response": "los brazos"
-    },
-    {
-       "question": "¿Que es largo y le cuelga a los hombres por delante?",
-        "response": "la corbata"
-    },
-    {
-       "question": "¿Cual es el juguete más egoísta?",
-        "response": "El Yo-Yo"
-    },
-    {
-       "question": "¿Que hacer una persona corriendo rápidamente alrededor de la universidad?",
-        "response": "Su carrera universitaria"
-    },
-    {
-       "question": "No son flores, pero tienes plantas y olores ¿que es?",
-        "response": "Los pies"
-    },
-    {
-       "question": "No lo puedes ver, pero no puedes vivir sin él. ¿Qué es?",
-       "response": "El aire"
-}
+        "question": "O que é, o que é: tem folhas, mas não é um livro, tem raízes, mas não é uma árvore?",
+        "response": "Uma planta."
+    }
 ]
