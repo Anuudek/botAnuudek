@@ -591,8 +591,8 @@ ${wm}`, fkontak, { mentions: [aa,] })
 //conn.sendMessage(m.chat, texto, {quoted: fkontak})	
 throw false
 }
-await conn.reply(m.chat, `ação feita com sucesso a função *${type}*.
-no momento ela está: ${isEnable ? lenguajeGB.smsEncender() : lenguajeGB.smsApagar()} neste ${isAll ? lenguajeGB.smsMens4() : isUser ? '' : lenguajeGB.smsMens5()}`, fkontak, m)}	
+await conn.reply(m.chat, `a função *${type}* foi ${isEnable ? lenguajeGB.smsEncender() : lenguajeGB.smsApagar()} com sucesso!.
+configuração aplicada para o ${isAll ? lenguajeGB.smsMens4() : isUser ? '' : lenguajeGB.smsMens5()}.`, fkontak, m)}	
 
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']
