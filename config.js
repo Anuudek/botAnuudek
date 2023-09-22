@@ -13,8 +13,7 @@ import { pt, en } from "./lib/idiomas/total-idiomas.js";
 global.owner = [
 ["553171134595", 'botAnuudek', true],
 ["553186456661", 'Carlos', true], 
-["‪553175123505‬"], //mel
-["553198169883"]] //victoria
+["‪553175123505‬"]] //mel
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
 
 global.mods = [""]; // moderadores
