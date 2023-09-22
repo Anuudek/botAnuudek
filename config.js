@@ -11,7 +11,7 @@ import { pt, en } from "./lib/idiomas/total-idiomas.js";
 //⊱ ━━━━━.⋅ Añada los numeros a ser Propietario/a | Add the numbers to be Owner ⋅.━━━━ ⊰  
 
 global.owner = [
-["553171134595", 'botAnuudek', true],
+["553171134595", 'Mint', true],
 ["553186456661", 'Carlos', true], 
 ["‪553175123505‬"]] //mel
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
@@ -91,7 +91,7 @@ global.moment = moment;
 //⊱ ━━━━━.⋅ Versión | Nombre | cuentas ⋅.━━━━ ⊰
 
 global.official = [ // Agregate si eres Owner
-["553171134595", 'botAnuudek 💻', 1], 
+["553171134595", 'Mint 💻', 1], 
 ["553186456661", 'Carlos Daniel 💻', 1],  
 ["553175123505", 'Mel 💻', 1]];
 
@@ -100,15 +100,15 @@ global.desc = 'criador do bot'; //agrega una descripción corta
 global.desc2 = ''; //agrega una descripción larga (Solo se aplicará si su whasapp no tiene descripción)
 global.country = '🇧🇷'; //agrega tú país ejemplo: 🇪🇨
 
-global.packname = "botAnuudek";
-global.author = "Anuudek";
+global.packname = "Mint";
+global.author = "MintIA";
 
 //⊱ ━━━━━.⋅ Versión | Nombre | cuentas ⋅.━━━━ ⊰
 
 global.vs = "1.4.9";
 global.vsJB = "2.0";
 
-global.gt = "botAnuudek";
+global.gt = "Mint";
 global.yt = "https://youtube.com/@gatadios";
 global.yt2 = "https://www.youtube.com/watch?v=Ko019wvu2Tc&t=71s";
 global.ig = "https://www.instagram.com/gata_dios";
@@ -162,8 +162,8 @@ global.exito = eg;
 
 //⊱ ━━━━━.⋅ Información | Information ⋅.━━━━ ⊰
 
-global.wm = "botAnuudek";
-global.igfg = "botAnuudek";
+global.wm = "Mint";
+global.igfg = "Mint";
 global.wait = "⌛ _carregando..._ *▬▭▭▭▭▭▭*";
 global.waitt = "⌛ _carregando..._ *▬▬▭▭▭*";
 global.waittt = "⌛ carregando..._ *▬▬▬▬▭▭*";
