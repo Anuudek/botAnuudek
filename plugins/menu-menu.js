@@ -81,7 +81,7 @@ months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'A
 lugarFecha.locale('pt', formatoFecha)
 const horarioFecha = lugarFecha.format('dddd, DD [de] MMMM [de] YYYY || HH:mm[h]').replace(/^\w/, (c) => c.toUpperCase())
 	
-let menu = `\`\`\`${horarioFecha} - menu do botAnuudek\`\`\`
+let menu = `\`\`\`${horarioFecha} - menu da Mint 💚\`\`\`
 
 olá, @${name}! :)
 
