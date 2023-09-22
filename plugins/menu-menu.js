@@ -83,7 +83,7 @@ const horarioFecha = lugarFecha.format('dddd, DD [de] MMMM [de] YYYY || HH:mm[h]
 	
 let menu = `\`\`\`${horarioFecha} - menu da Mint 💚\`\`\`
 
-olá, @${name}! :)
+olá, @${m.sender.split`@`[0]}! :)
 
 *MENU DE COMANDOS*
 
