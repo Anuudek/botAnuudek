@@ -99,7 +99,7 @@ olá, @${m.sender.split`@`[0]} :)
 
 *->* _.menustickers_
 
-faça bom uso do bot!`.trim()
+faça um bom uso de mim!!!`.trim()
 await conn.sendFile(m.chat, gataVidMenu.getRandom(), 'gata.mp4', menu, m, false, { mentions: [m.sender] })
 
 } catch (e) {
