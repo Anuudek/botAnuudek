@@ -1,4 +1,4 @@
-const toxicRegex = /filhodaputa|putinha|taylor swift|melissa/i
+const toxicRegex = /filhodaputa|putinha|taylor swift/i
 
 export async function before(m, { conn, isAdmin, isBotAdmin, isOwner }) {
  
