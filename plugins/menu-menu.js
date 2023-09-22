@@ -100,7 +100,7 @@ olá, @${m.sender.split`@`[0]} :)
 *->* _.menustickers_
 
 faça bom uso do bot!`.trim()
-await conn.sendFile(m.chat, gataVidMenu.getRandom(), 'gata.mp4', menu, m, { mentions: [m.sender] })
+await conn.sendFile({ mentions: [m.sender] }, m.chat, gataVidMenu.getRandom(), 'gata.mp4', menu)
 	
 } catch (e) {
 await m.reply(lenguajeGB['smsMalError3']() + '\n*' + lenguajeGB.smsMensError1() + '*\n*' + usedPrefix + `${lenguajeGB.lenguaje() == 'es' ? 'reporte' : 'report'}` + '* ' + `${lenguajeGB.smsMensError2()} ` + usedPrefix + command)
