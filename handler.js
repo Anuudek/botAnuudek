@@ -963,7 +963,7 @@ if (!('premium' in user)) user.premium = false
 		if (!('antiInstagram' in chat)) chat.antiInstagram = false
 		if (!('antiTwitter' in chat)) chat.antiInstagram = false
 		if (!('antifake' in chat)) chat.antifake = false
-		if (!('reaction' in chat)) chat.reaction = true    
+		if (!('reaction' in chat)) chat.reaction = false    
                 if (!('viewonce' in chat)) chat.viewonce = true         
                 if (!('modoadmin' in chat)) chat.modoadmin = false           
                 if (!('antitoxic' in chat)) chat.antitoxic = true 
@@ -996,7 +996,7 @@ if (!('premium' in user)) user.premium = false
 		    antiInstagram: false,
 		    antiTwitter: false,
 		    antifake: false,
-		    reaction: true,
+		    reaction: false,
                     viewonce: true,
                     modoadmin: false,
                     antitoxic: true,
@@ -1366,7 +1366,7 @@ return
 	    
         if (!db.data.chats[m.chat].reaction && m.isGroup) throw 0
         if (!m.fromMem && m.text.match(/(ata|des|able|izo|ido|.-.|._.|:)|:(|:v|v:|o.o|;v|v;|v':|:'v)/gi)) {
-        let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "🖕", "🐦"])
+        let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "🐦"])
         this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
         function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
 		
