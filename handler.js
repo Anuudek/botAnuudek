@@ -97,6 +97,7 @@ if (!('premium' in user)) user.premium = false
 	      if (!('role' in user)) user.role = '*NOVATO(A)* 🪤'
               if (!isNumber(user.agility)) user.agility = 0
               if (!isNumber(user.anakanjing)) user.anakanjing = 0
+		if (!isNumber(user.mesagge)) user.anakanjing = 0
               if (!isNumber(user.anakcentaur)) user.anakcentaur = 0
               if (!isNumber(user.anakgriffin)) user.anakgriffin = 0
               if (!isNumber(user.anakkucing)) user.anakkucing = 0
@@ -510,6 +511,7 @@ if (!('premium' in user)) user.premium = false
 		    premLimit: 0,
 		    miestado: 0,
                     agility: 16,
+			messageSpam: 0,
                     anakanjing: 0,
                     anakcentaur: 0,
                     anakgriffin: 0,
@@ -1172,7 +1174,12 @@ let chat = global.db.data.chats[m.chat]
 let user = global.db.data.users[m.sender]
 if (name != 'owner-unbanchat.js' && name != 'owner-exec.js' && name != 'owner-exec2.js' && name != 'tool-delete.js' && chat?.isBanned && !isROwner) return 
 if (m.text && user.banned && !isROwner) {
-m.reply('Has sido baneado.')
+if (user.antispam > 2) return
+m.reply(`🚫 *ESTÁ BANEADO(A), NO PUEDE USAR COMANDOS*\n
+📑 *MOTIVO: ${user.messageSpam === 0 ? 'NO ESPECIFICADO' : user.messageSpam}*\n
+⚠️ \`\`\`SI ESTE BOT ES CUENTA OFICIAL Y TIENE EVIDENCIA QUE RESPALDE QUE ESTE MENSAJE ES UN ERROR, PUEDE EXPONER SU CASO EN:\`\`\`
+*${ig}*`)
+user.antispam++	
 return
 }
 }
