@@ -61,7 +61,7 @@ m.reply(JSON.parse(`${vihangaytjson3.data}`).trim());
 } catch {    
 const akuariapi2 = await fetch(`https://api.akuari.my.id/ai/gpt?chat=${textodem}`);
 const akuariapijson2 = await akuariapi2.json();
-const akuariapiresult2 = await translate(`${akuariapijson2.respon}`, {to: 'pt', autoCorrect: true});
+const akuariapiresult2 = await translate(`${akuariapijson2.respon}`, {to: 'es', autoCorrect: true});
 m.reply(`${akuariapiresult2.text}`.trim());
 return;    
 }}}}}}
