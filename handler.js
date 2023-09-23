@@ -44,7 +44,7 @@ let user = global.db.data.users[m.sender]
 /*------------------------------------------------*/	            
 let chatgptUser = global.chatgpt.data.users[m.sender];
 if (typeof chatgptUser !== "object")
-global.chatgpt.data.users[m.sender] = [];
+global.chatgpt.data.users[m.sender] = [];		
 /*------------------------------------------------*/
 if (typeof user !== 'object')
 global.db.data.users[m.sender] = {}
@@ -58,7 +58,7 @@ if (!('premium' in user)) user.premium = false
 		if (!('registroR' in user)) user.registroR = false
 		if (!('registroC' in user)) user.registroC = false  
 		if (!isNumber(user.IDregister)) user.IDregister = 0   
-                    
+	
         if (!user.registered) {
 	    if (!('name' in user)) user.name = m.name
 	    if (!isNumber(user.age)) user.age = 0
@@ -90,14 +90,14 @@ if (!('premium' in user)) user.premium = false
                     if (!isNumber(user.stroberi)) user.stroberi = 0
                         
 	        }
-		                    		    
+	  if (!isNumber(user.counterPrivate)) user.counterPrivate = 0	                    		    
           if (!isNumber(user.afk)) user.afk = -1
 	      //if (!('autolevelup' in user))  user.autolevelup = true
 	      if (!isNumber(user.reporte)) user.reporte = 0
 	      if (!('role' in user)) user.role = '*NOVATO(A)* 🪤'
               if (!isNumber(user.agility)) user.agility = 0
               if (!isNumber(user.anakanjing)) user.anakanjing = 0
-		if (!isNumber(user.mesagge)) user.anakanjing = 0
+	      if (!isNumber(user.mesagge)) user.anakanjing = 0
               if (!isNumber(user.anakcentaur)) user.anakcentaur = 0
               if (!isNumber(user.anakgriffin)) user.anakgriffin = 0
               if (!isNumber(user.anakkucing)) user.anakkucing = 0
@@ -495,11 +495,10 @@ if (!('premium' in user)) user.premium = false
               if (!user.job) user.job = 'Desempleo'
               if (!user.premium) user.premium = false
               if (!user.premium) user.premiumTime = 0
-              if (!user.rtrofi) user.rtrofi = 'Bronce'                    		                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+              if (!user.rtrofi) user.rtrofi = 'Bronce'
             } else
-	
-                global.db.data.users[m.sender] = {
-		    
+                global.db.data.users[m.sender] = { 
+		    counterPrivate: 0,
 		    afk: -1,
                     afkReason: '',
 	            reporte: 0,
@@ -511,7 +510,7 @@ if (!('premium' in user)) user.premium = false
 		    premLimit: 0,
 		    miestado: 0,
                     agility: 16,
-			messageSpam: 0,
+                    messageSpam: 0,
                     anakanjing: 0,
                     anakcentaur: 0,
                     anakgriffin: 0,
@@ -953,7 +952,7 @@ if (!('premium' in user)) user.premium = false
                 if (!('modohorny' in chat)) chat.modohorny = false                    
                 if (!('stickers' in chat)) chat.stickers = false                   
                 if (!('autosticker' in chat)) chat.autosticker = false                      
-                if (!('audios' in chat)) chat.audios = false                     
+                if (!('audios' in chat)) chat.audios = true                     
 		if (!('antiver' in chat)) chat.antiver = false                  
                 if (!('antiLink' in chat)) chat.antiLink = false                    
                 if (!('antiLink2' in chat)) chat.antiLink2 = false
@@ -964,7 +963,7 @@ if (!('premium' in user)) user.premium = false
 		if (!('antiInstagram' in chat)) chat.antiInstagram = false
 		if (!('antiTwitter' in chat)) chat.antiInstagram = false
 		if (!('antifake' in chat)) chat.antifake = false
-		if (!('reaction' in chat)) chat.reaction = false    
+		if (!('reaction' in chat)) chat.reaction = true    
                 if (!('viewonce' in chat)) chat.viewonce = true         
                 if (!('modoadmin' in chat)) chat.modoadmin = false           
                 if (!('antitoxic' in chat)) chat.antitoxic = true 
@@ -986,7 +985,7 @@ if (!('premium' in user)) user.premium = false
                     modohorny: true,
                     stickers: false,
                     autosticker: false,
-                    audios: false,
+                    audios: true,
 		    antiver: false,
                     antiLink: false,
                     antiLink2: false,
@@ -997,7 +996,7 @@ if (!('premium' in user)) user.premium = false
 		    antiInstagram: false,
 		    antiTwitter: false,
 		    antifake: false,
-		    reaction: false,
+		    reaction: true,
                     viewonce: true,
                     modoadmin: false,
                     antitoxic: true,
@@ -1028,7 +1027,7 @@ if (!('premium' in user)) user.premium = false
 		antiPrivate: false,
 		antiCall: true,
 		antiSpam: true,
-		modoia: false,
+		modoia: false, 
 		jadibotmd: true,
             }
         } catch (e) {
@@ -1164,15 +1163,13 @@ if (!('premium' in user)) user.premium = false
                             plugin.command === command :
                             false
 
-
 if (!isAccept)
-continue
-m.plugin = name
 continue
 m.plugin = name
 if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
 let chat = global.db.data.chats[m.chat]
 let user = global.db.data.users[m.sender]
+if (!['owner-unbanchat.js'].includes(name) && chat && chat.isBanned && !isROwner) return // Except this
 if (name != 'owner-unbanchat.js' && name != 'owner-exec.js' && name != 'owner-exec2.js' && name != 'tool-delete.js' && chat?.isBanned && !isROwner) return 
 if (m.text && user.banned && !isROwner) {
 if (user.antispam > 2) return
@@ -1185,7 +1182,6 @@ return
 }
 }
 		
-
 
                 let hl = _prefix 
                 let adminMode = global.db.data.chats[m.chat].modoadmin
@@ -1366,13 +1362,14 @@ return
 	let settingsREAD = global.db.data.settings[this.user.jid] || {}  
         if (opts['autoread']) await this.readMessages([m.key])
 	if (settingsREAD.autoread2) await this.readMessages([m.key])  
-	//if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])
-
-/*	if (!db.data.chats[m.chat].reaction && m.isGroup) throw 0
-        if (!m.fromMem && m.text.match(/(ata|a|des|able|izo|ido|.-.|._.|:)|:(|:v|v:|o.o|;v|v;|v':|:'v)/gi)) {
-        let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "🐦"])
+	//if (settingsREAD.autoread2 == 'true') await this.readMessages([m.key])    
+	    
+        if (!db.data.chats[m.chat].reaction && m.isGroup) throw 0
+        if (!m.fromMem && m.text.match(/(ata|des|able|izo|ido|.-.|._.|:)|:(|:v|v:|o.o|;v|v;|v':|:'v)/gi)) {
+        let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "🖕", "🐦"])
         this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
-        function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}*/
+        function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
+		
     }
 }
 
@@ -1404,7 +1401,7 @@ pp = await this.profilePictureUrl(user, 'image')
 let apii = await this.getFile(pp)                                      
 const botTt2 = groupMetadata.participants.find(u => this.decodeJid(u.id) == this.user.jid) || {} 
 const isBotAdminNn = botTt2?.admin === "admin" || false
-text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'sou Mint!') :
+text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || '😻 𝗦𝘂𝗽𝗲𝗿 𝗚𝗮𝘁𝗮𝗕𝗼𝘁-𝗠𝗗 😻') :
 (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
 			    
 if (chat.antifake && isBotAdminNn && action === 'add') {
@@ -1415,11 +1412,21 @@ let responseb = await this.groupParticipantsUpdate(id, [user], 'remove')
 if (responseb[0].status === "404") return      
 return    
 }}    
-//let fkontak2 = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${user.split('@')[0]}:${user.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }      
+let fkontak2 = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${user.split('@')[0]}:${user.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }      
 this.sendMessage(id, { text: text, 
 contextInfo:{
-mentionedJid:[user]}}) 
-//this.sendFile(id, apii.data, 'pp.jpg', text, null, false, { mentions: [user] })
+forwardingScore: 9999999,
+isForwarded: true, 
+mentionedJid:[user],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"thumbnail": apii.data, 
+"title": [wm, '😻 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(),
+"containsAutoReply": true,
+"mediaType": 1, 
+sourceUrl: [md, nna, nn2, yt, ig, paypal, fb].getRandom()}}}, { quoted: fkontak2 }) 
+//this.sendFile(id, apii.data, 'pp.jpg', text, null, false, { mentions: [user] }, { quoted: fkontak2 })
 }}}
 			    
 break
@@ -1514,13 +1521,13 @@ let msg = {
 }[type]
 //if (msg) return m.reply(msg)
 let tg = { quoted: m, userJid: conn.user.jid }
-//let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), tg)
-if (msg) return conn.relayMessage(m.chat, m)
+let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), body: [wm, '😻 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, nna, nn, nnn, nnnt, nnnttt4, yt, ig, paypal, fb].getRandom() }}}}, tg)
+if (msg) return conn.relayMessage(m.chat, prep.message, { messageId: prep.key.id })
 }
 
 const file = global.__filename(import.meta.url, true);
 watchFile(file, async () => {
-    unwatchFile(file);
+  unwatchFile(file);
 console.log(chalk.redBright('Update \'handler.js\''));
 if (global.reloadHandler) console.log(await global.reloadHandler());
 if (global.conns && global.conns.length > 0 ) {
