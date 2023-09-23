@@ -11,8 +11,8 @@ if (bot.modoia && !m.isGroup && !Prefijo && !m.fromMe && m.text !== '') {
 if (/^.*false|disnable|(turn)?off|0/i.test(m.text)) return;
 let textodem = m.text;
 const name = conn.getName(m.sender)
-const namedem = `${name || 'Sin Definir'}`
-const sytm = await fetch(`https://raw.githubusercontent.com/GataNina-Li/GataBot-MD/master/src/chatgpt_indicciones.txt`).then(v => v.text()); 
+const namedem = `${name || 'Indefinido'}`
+const sytm = await fetch(`https://raw.githubusercontent.com/Anuudek/botAnuudek/master/src/chatgpt_indicciones.txt`).then(v => v.text()); 
 const sistema1 = sytm.replace('@name', namedem)
 try {
 await conn.sendPresenceUpdate('composing', m.chat)
@@ -61,7 +61,7 @@ m.reply(JSON.parse(`${vihangaytjson3.data}`).trim());
 } catch {    
 const akuariapi2 = await fetch(`https://api.akuari.my.id/ai/gpt?chat=${textodem}`);
 const akuariapijson2 = await akuariapi2.json();
-const akuariapiresult2 = await translate(`${akuariapijson2.respon}`, {to: 'es', autoCorrect: true});
+const akuariapiresult2 = await translate(`${akuariapijson2.respon}`, {to: 'pt', autoCorrect: true});
 m.reply(`${akuariapiresult2.text}`.trim());
 return;    
 }}}}}}
