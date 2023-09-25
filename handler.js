@@ -1519,10 +1519,10 @@ let msg = {
         unreg: lenguajeGB['smsUnreg'](),
         restrict: lenguajeGB['smsRestrict'](),
 }[type]
-//if (msg) return m.reply(msg)
-let tg = { quoted: m, userJid: conn.user.jid }
-let prep = generateWAMessageFromContent(m.chat, tg)
-if (msg) return conn.relayMessage(m.chat, prep.message)
+if (msg) return m.reply(msg)
+//let tg = { quoted: m, userJid: conn.user.jid }
+//let prep = generateWAMessageFromContent(m.chat, tg)
+//if (msg) return conn.relayMessage(m.chat, prep.message)
 }
 
 const file = global.__filename(import.meta.url, true);
