@@ -1522,7 +1522,7 @@ let msg = {
 //if (msg) return m.reply(msg)
 let tg = { quoted: m, userJid: conn.user.jid }
 let prep = generateWAMessageFromContent(m.chat, tg)
-if (msg) return conn.relayMessage(m.chat, prep.message, { messageId: prep.key.id })
+if (msg) return conn.relayMessage(m.chat, prep.message)
 }
 
 const file = global.__filename(import.meta.url, true);
