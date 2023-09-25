@@ -1521,8 +1521,8 @@ let msg = {
 }[type]
 //if (msg) return m.reply(msg)
 let tg = { quoted: m, userJid: conn.user.jid }
-let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), body: [wm, '😻 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, nna, nn, nnn, nnnt, nnnttt4, yt, ig, paypal, fb].getRandom() }}}}, tg)
-if (msg) return conn.relayMessage(m.chat, prep.message, { messageId: prep.key.id })
+//let prep = generateWAMessageFromContent(m.chat, { extendedTextMessage: { text: msg, contextInfo: { externalAdReply: { title: lenguajeGB.smsAvisoAG().slice(0,-2), body: [wm, '😻 𝗦𝘂𝗽𝗲𝗿 ' + gt + ' 😻', '🌟 centergatabot.gmail.com'].getRandom(), thumbnail: gataImg.getRandom(), sourceUrl: [md, nna, nn, nnn, nnnt, nnnttt4, yt, ig, paypal, fb].getRandom() }}}}, tg)
+if (msg) return conn.relayMessage(m.chat, { messageId: m.key.id })
 }
 
 const file = global.__filename(import.meta.url, true);
