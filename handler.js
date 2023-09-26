@@ -1038,20 +1038,15 @@ if (!('premium' in user)) user.premium = false
 		jadibotmd: true,
             }
         } catch (e) {
-            console.error(e)
-        }
-        if (opts['nyimak'])
-            return
-        if (!m.fromMe && !m.Owner & opts['self'])
-            return
-        if (opts['pconly'] && m.chat.endsWith('g.us') && !m.Owner)
-            return
-        if (opts['gconly'] && !m.chat.endsWith('g.us') && !m.Owner)
-            return
-        if (opts['swonly'] && m.chat !== 'status@broadcast')
-            return
-        if (typeof m.text !== 'string')
-            m.text = ''
+console.error(e)
+}
+if (opts['nyimak']) return
+if (!m.fromMe && !m.Owner && !m.ROwner && opts['self']) return
+if (opts['pconly'] && m.chat.endsWith('g.us') && !m.Owner && !m.ROwner) return
+if (opts['gconly'] && !m.chat.endsWith('g.us') && !m.Owner && !m.ROwner) return
+if (opts['swonly'] && m.chat !== 'status@broadcast') return
+if (typeof m.text !== 'string')
+m.text = ''
 
         const isROwner = [conn.decodeJid(global.conn.user.id), ...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isOwner = isROwner || m.fromMe
