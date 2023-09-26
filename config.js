@@ -12,7 +12,7 @@ import { pt, en } from "./lib/idiomas/total-idiomas.js";
 
 global.owner = [
 ["553171134595", 'Mint', true],
-["553186456661", 'Carlos', true], 
+["55318645666", 'Carlos', true], 
 ["‪553175123505‬"]] //mel
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
 
