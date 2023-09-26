@@ -106,7 +106,7 @@ global.author = "MintIA";
 //⊱ ━━━━━.⋅ Versión | Nombre | cuentas ⋅.━━━━ ⊰
 
 global.vs = "1.4.9";
-global.vsJB = "2.0";
+global.vsJB = "2.5 (Beta)";
 
 global.gt = "Mint";
 global.yt = "https://youtube.com/@gatadios";
