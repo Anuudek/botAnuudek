@@ -13,7 +13,9 @@ import { pt, en } from "./lib/idiomas/total-idiomas.js";
 global.owner = [
 ["553171134595", 'Mint', true],
 ["553186456661", 'Carlos', true], 
-["‪553175123505‬"]] //mel
+["‪553175123505‬"], //mel
+["553183052833"], //davi
+["553198169883"]] //victoria
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ฅ^•ﻌ•^ฅ
 
 global.mods = [""]; // moderadores
