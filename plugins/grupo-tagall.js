@@ -4,10 +4,10 @@ global.dfail('admin', m, conn)
 throw false
 }
 let pesan = args.join` `
-let oi = `*-> mensagem:* ${pesan}`
-let teks = `_${wm} • marcando todos do grupo..._\n\n${oi}\n\n`
+let oi = `*mensagem:* ${pesan}`
+let teks = `_${wm} • marcando todos do grupo._\n\n${oi}\n\n`
 for (let mem of participants) {
-teks += `>>> @${mem.id.split('@')[0]}\n`}
+teks += `• @${mem.id.split('@')[0]} • `}
 conn.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, )  
 }
 handler.command = /^(tagall|invocar|invocacion|todos|invocación)$/i
