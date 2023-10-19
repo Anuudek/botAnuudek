@@ -11,16 +11,9 @@
 "plugins": "plugins" },
     
 "scripts": {
-    "test": "node test.js",
-    "test2": "nodemon index.js",
-    "dev": "supervisor -w index.js",
-    "build": "rm -rf node_modules yarn.lock package-lock.json && yarn install && npm install",
     "start": "node --no-warnings index.js",
-    "start2": "forever --no-warnings --minUptime=1000ms --spinSleepTime=1000ms index.js",
-    "start3": "pm2 start npm -- start --no-warnings && pm2 save && pm2 logs",
-    "stop": "pm2 stop npm && pm2 delete npm && pm2 save --force",
-    "deletesession": "sudo rm -r botAnuudekSession",
-    "sync": "git init --initial-branch=master && git fetch origin master && git reset --hard origin/master"
+    "test": "node test.js",
+    "test2": "nodemon index.js"
   },
     
 "homepage": "https://github.com/Anuudek/botanuudek",
