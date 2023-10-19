@@ -13,7 +13,7 @@
 "scripts": {
     "start": "node --no-warnings index.js",
     "test": "node test.js",
-    "test2": "nodemon index.js"
+    "test2": "nodemon index.js",
   },
     
 "homepage": "https://github.com/Anuudek/botanuudek",
